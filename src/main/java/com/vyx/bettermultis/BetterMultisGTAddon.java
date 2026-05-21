@@ -3,6 +3,7 @@ package com.vyx.bettermultis;
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
+import com.vyx.bettermultis.machines.BetterMultisMachines;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
@@ -13,11 +14,12 @@ public class BetterMultisGTAddon implements IGTAddon {
 
     @Override
     public GTRegistrate getRegistrate() {
-        return BetterMultis.REGISTRATE;
+        return BetterMultis.BMREGISTRATE;
     }
 
     @Override
     public void initializeAddon() {
+        BetterMultisMachines.init();
     }
 
     @Override

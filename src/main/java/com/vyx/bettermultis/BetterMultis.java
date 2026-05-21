@@ -27,10 +27,12 @@ public class BetterMultis {
 
     public static final String MOD_ID = "bettermultis";
     public static final Logger LOGGER = LogManager.getLogger();
-    public static GTRegistrate REGISTRATE = GTRegistrate.create(BetterMultis.MOD_ID);
+    public static GTRegistrate BMREGISTRATE = GTRegistrate.create(BetterMultis.MOD_ID);
 
     public BetterMultis() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        BMREGISTRATE.registerRegistrate();
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
@@ -48,7 +50,6 @@ public class BetterMultis {
         // we need to register our object like this!
         MinecraftForge.EVENT_BUS.register(this);
 
-        REGISTRATE.registerRegistrate();
     }
 
     /**
