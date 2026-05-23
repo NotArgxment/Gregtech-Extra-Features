@@ -1,6 +1,6 @@
-package com.vyx.bettermultis;
+package com.vyx.extraadditions;
 
-import com.vyx.bettermultis.machines.BetterMultisMachines;
+import com.vyx.extraadditions.machines.BetterMultisMachines;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.*;
@@ -25,7 +25,7 @@ import org.apache.logging.log4j.Logger;
 @SuppressWarnings("removal")
 public class BetterMultis {
 
-    public static final String MOD_ID = "bettermultis";
+    public static final String MOD_ID = "extraadditions";
     public static final Logger LOGGER = LogManager.getLogger();
     public static final GTRegistrate BMREGISTRATE = GTRegistrate.create(BetterMultis.MOD_ID);
 

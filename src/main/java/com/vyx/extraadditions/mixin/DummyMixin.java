@@ -1,4 +1,4 @@
-package com.vyx.bettermultis.mixin;
+package com.vyx.extraadditions.mixin;
 
 import net.minecraft.world.level.levelgen.WorldgenRandom;
 import org.spongepowered.asm.mixin.Mixin;

@@ -1,9 +1,9 @@
-package com.vyx.bettermultis;
+package com.vyx.extraadditions;
 
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
-import com.vyx.bettermultis.machines.BetterMultisMachines;
+import com.vyx.extraadditions.machines.BetterMultisMachines;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;

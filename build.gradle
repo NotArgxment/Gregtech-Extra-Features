@@ -129,7 +129,7 @@ legacyForge {
 }
 jar {
     manifest.attributes([
-            "MixinConfigs": "bettermultis.mixins.json"
+            "MixinConfigs": "extraadditions.mixins.json"
     ])
 }
 
