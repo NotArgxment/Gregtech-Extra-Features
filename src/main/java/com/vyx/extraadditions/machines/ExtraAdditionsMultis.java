@@ -14,13 +14,13 @@ import static com.gregtechceu.gtceu.common.data.GCYMRecipeTypes.*;
 import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.*;
 
-import static com.vyx.extraadditions.BetterMultis.BMREGISTRATE;
+import static com.vyx.extraadditions.ExtraAdditionsCore.EAREGISTRATE;
 
-public class BetterMultisMachines {
+public class ExtraAdditionsMultis {
 
     public static void init() {}
 
-    public static MultiblockMachineDefinition ROBUST_ALLOY_MATERIALIZER = BMREGISTRATE
+    public static MultiblockMachineDefinition ROBUST_ALLOY_MATERIALIZER = EAREGISTRATE
             .multiblock("robust_alloy_materializer", LaserLogic::new)
             .langValue("Robust Alloy Materializer [RAM]")
             .rotationState(RotationState.NON_Y_AXIS)
@@ -57,7 +57,7 @@ public class BetterMultisMachines {
                     GTCEu.id("block/multiblock/gcym/blast_alloy_smelter"))
             .register();
 
-    public static MultiblockMachineDefinition ADVANCED_CRACKING_UNIT = BMREGISTRATE
+    public static MultiblockMachineDefinition ADVANCED_CRACKING_UNIT = EAREGISTRATE
             .multiblock("advanced_cracking_unit", CoilWorkableElectricMultiblockMachine::new)
             .langValue("Advanced Cracking Unit [ACU]")
             .rotationState(RotationState.NON_Y_AXIS)
@@ -90,7 +90,7 @@ public class BetterMultisMachines {
                     GTCEu.id("block/multiblock/cracking_unit"))
             .register();
 
-    public static MultiblockMachineDefinition ENLARGED_REACTION_CHAMBER = BMREGISTRATE
+    public static MultiblockMachineDefinition ENLARGED_REACTION_CHAMBER = EAREGISTRATE
             .multiblock("enlarged_reaction_chamber", WorkableElectricMultiblockMachine::new)
             .langValue("Enlarged Reaction Chamber [ERC]")
             .rotationState(RotationState.NON_Y_AXIS)
@@ -125,7 +125,7 @@ public class BetterMultisMachines {
                     GTCEu.id("block/multiblock/large_chemical_reactor"))
             .register();
 
-    public static MultiblockMachineDefinition LARGE_PYROLYSIS_UNIT = BMREGISTRATE
+    public static MultiblockMachineDefinition LARGE_PYROLYSIS_UNIT = EAREGISTRATE
             .multiblock("large_pyrolysis_unit", CoilWorkableElectricMultiblockMachine::new)
             .langValue("Large Pyrolysis Unit [LPU]")
             .rotationState(RotationState.NON_Y_AXIS)

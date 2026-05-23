@@ -19,8 +19,8 @@ public class LaserLogic extends CoilWorkableElectricMultiblockMachine {
     /**
      * xor logic:
      * allows exclusively 1 laser hatch OR exclusively 1-2 energy hatches,
-     * so theres no way to put both on the same structure,
-     * for now only has use on the Robust Alloy Materializer
+     * so there is no way to put both on the same structure,
+     * for now only its being used only on the Robust Alloy Materializer
      */
 
     @Override

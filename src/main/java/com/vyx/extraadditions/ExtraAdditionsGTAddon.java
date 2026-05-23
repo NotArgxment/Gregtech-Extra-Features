@@ -3,28 +3,28 @@ package com.vyx.extraadditions;
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
-import com.vyx.extraadditions.machines.BetterMultisMachines;
+import com.vyx.extraadditions.machines.ExtraAdditionsMultis;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
 
 @SuppressWarnings("unused")
 @GTAddon
-public class BetterMultisGTAddon implements IGTAddon {
+public class ExtraAdditionsGTAddon implements IGTAddon {
 
     @Override
     public GTRegistrate getRegistrate() {
-        return BetterMultis.BMREGISTRATE;
+        return ExtraAdditionsCore.EAREGISTRATE;
     }
 
     @Override
     public void initializeAddon() {
-        BetterMultisMachines.init();
+        ExtraAdditionsMultis.init();
     }
 
     @Override
     public String addonModId() {
-        return BetterMultis.MOD_ID;
+        return ExtraAdditionsCore.MOD_ID;
     }
 
     @Override

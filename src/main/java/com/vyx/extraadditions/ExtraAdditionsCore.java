@@ -1,6 +1,6 @@
 package com.vyx.extraadditions;
 
-import com.vyx.extraadditions.machines.BetterMultisMachines;
+import com.vyx.extraadditions.machines.ExtraAdditionsMultis;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.*;
@@ -21,18 +21,18 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(BetterMultis.MOD_ID)
+@Mod(ExtraAdditionsCore.MOD_ID)
 @SuppressWarnings("removal")
-public class BetterMultis {
+public class ExtraAdditionsCore {
 
     public static final String MOD_ID = "extraadditions";
     public static final Logger LOGGER = LogManager.getLogger();
-    public static final GTRegistrate BMREGISTRATE = GTRegistrate.create(BetterMultis.MOD_ID);
+    public static final GTRegistrate EAREGISTRATE = GTRegistrate.create(ExtraAdditionsCore.MOD_ID);
 
-    public BetterMultis() {
+    public ExtraAdditionsCore() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        BMREGISTRATE.registerRegistrate();
+        EAREGISTRATE.registerRegistrate();
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
@@ -81,7 +81,7 @@ public class BetterMultis {
      * @param event
      */
     private void addMaterialRegistries(MaterialRegistryEvent event) {
-        GTCEuAPI.materialManager.createRegistry(BetterMultis.MOD_ID);
+        GTCEuAPI.materialManager.createRegistry(ExtraAdditionsCore.MOD_ID);
     }
 
     /**
@@ -120,7 +120,7 @@ public class BetterMultis {
      * @param event
      */
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
-        BetterMultisMachines.init();
+        ExtraAdditionsMultis.init();
     }
 
     /**
