@@ -8,13 +8,13 @@ import com.gregtechceu.gtceu.api.registry.registrate.MultiblockMachineBuilder;
 import java.util.Locale;
 import java.util.function.BiFunction;
 
-import static com.gregtechceu.gtceu.common.registry.GTRegistration.REGISTRATE;
+import static com.vyx.extraadditions.ExtraAdditionsCore.EAREGISTRATE;
 
 public static MultiblockMachineDefinition[] registerTieredMultis(String name,
                                                                  BiFunction<IMachineBlockEntity, Integer, MultiblockControllerMachine> factory,
                                                                  BiFunction<Integer, MultiblockMachineBuilder<?, ?>, MultiblockMachineDefinition> builder,
                                                                  int... tiers) {
-    return registerTieredMultis(REGISTRATE, name, factory, builder, tiers);
+    return registerTieredMultis(EAREGISTRATE, name, factory, builder, tiers);
 }
 
 public static MultiblockMachineDefinition[] registerTieredMultis(GTRegistrate registrate, String name,
