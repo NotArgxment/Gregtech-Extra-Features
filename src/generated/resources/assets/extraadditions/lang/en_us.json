@@ -3,7 +3,13 @@
   "block.extraadditions.enlarged_reaction_chamber": "Enlarged Reaction Chamber [ERC]",
   "block.extraadditions.large_pyrolysis_unit": "Large Pyrolysis Unit [LPU]",
   "block.extraadditions.luv_advanced_fusion_reactor": "Advanced Fusion Reactor MK I",
+  "block.extraadditions.max_parallel_hatch": "Infinite Parallel Control Hatch",
+  "block.extraadditions.opv_parallel_hatch": "Cosmical Parallel Control Hatch",
   "block.extraadditions.robust_alloy_materializer": "Robust Alloy Materializer [RAM]",
+  "block.extraadditions.uev_parallel_hatch": "Universal Parallel Control Hatch",
+  "block.extraadditions.uhv_parallel_hatch": "Hyper Parallel Control Hatch",
+  "block.extraadditions.uiv_parallel_hatch": "Multiversal Parallel Control Hatch",
   "block.extraadditions.uv_advanced_fusion_reactor": "Advanced Fusion Reactor MK III",
+  "block.extraadditions.uxv_parallel_hatch": "Extraversal Parallel Control Hatch",
   "block.extraadditions.zpm_advanced_fusion_reactor": "Advanced Fusion Reactor MK II"
 }

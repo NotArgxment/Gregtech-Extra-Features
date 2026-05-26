@@ -12,9 +12,15 @@ import com.gregtechceu.gtceu.common.data.*;
 import com.gregtechceu.gtceu.common.machine.multiblock.electric.FusionReactorMachine;
 
 import com.vyx.extraadditions.machines.extras.LaserLogic;
-import com.vyx.extraadditions.machines.extras.parallel.FusionReactorParallel;
 
+import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 import static com.gregtechceu.gtceu.api.GTValues.*;
 import static com.gregtechceu.gtceu.api.pattern.Predicates.*;
@@ -23,12 +29,11 @@ import static com.gregtechceu.gtceu.common.data.GCYMRecipeTypes.*;
 import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
 import static com.gregtechceu.gtceu.common.data.GTRecipeModifiers.*;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.*;
-import static com.gregtechceu.gtceu.common.data.machines.GTMachineUtils.*;
-import static com.gregtechceu.gtceu.common.data.models.GTMachineModels.createWorkableCasingMachineModel;
+import static com.gregtechceu.gtceu.common.data.models.GTMachineModels.*;
 import static com.gregtechceu.gtceu.utils.FormattingUtil.*;
 
 import static com.vyx.extraadditions.ExtraAdditionsCore.EAREGISTRATE;
-import static com.vyx.extraadditions.machines.extras.EAMachineUtils.TieredMultis;
+import static com.vyx.extraadditions.machines.extras.utils.EAMachineUtils.TieredMultis;
 
 public class ExtraAdditionsMultis {
 
@@ -184,10 +189,15 @@ public class ExtraAdditionsMultis {
                     .rotationState(RotationState.ALL)
                     .langValue("Advanced Fusion Reactor MK %s"
                             .formatted(toRomanNumeral(tier - 5)))
+                    .tooltips(
+                            Component.translatable("gtceu.machine.fusion_reactor.capacity",
+                                    FusionReactorMachine.calculateEnergyStorageFactor(tier, 16) / 1000000L),
+                            Component.translatable("gtceu.machine.fusion_reactor.overclocking"),
+                            Component.translatable("gtceu.multiblock.%s_fusion_reactor.description"
+                                    .formatted(VN[tier].toLowerCase(Locale.ROOT))))
                     .recipeType(GTRecipeTypes.FUSION_RECIPES)
                     .recipeModifiers(DEFAULT_ENVIRONMENT_REQUIREMENT,
-                            FusionReactorMachine::recipeModifier,
-                            FusionReactorParallel::perfectParallel)
+                            FusionReactorMachine::recipeModifier)
                     .appearanceBlock(() -> FusionReactorMachine.getCasingState(tier))
                     .pattern((definition) -> {
 
@@ -212,8 +222,7 @@ public class ExtraAdditionsMultis {
                                 .where('@', controller(Predicates.blocks(definition.get())))
                                 .where('#', Predicates.air())
                                 .where(' ', Predicates.any())
-                                .where('C', casing
-                                        .or(Predicates.blocks(GTBlocks.FUSION_GLASS.get())))
+                                .where('C', blocks(FUSION_GLASS.get()).or(casing))
                                 .where('F', casing)
                                 .where('1', casing.or(
                                         Predicates.abilities(PartAbility.IMPORT_FLUIDS).setMaxGlobalLimited(16)))
@@ -227,50 +236,49 @@ public class ExtraAdditionsMultis {
                                 .where('H', blocks(FusionReactorMachine.getCoilState(tier)))
                                 .build();
                     })
-                    /*
                     .shapeInfos((controller) -> {
                         List<MultiblockShapeInfo> shapeInfos = new ArrayList<>();
                         MultiblockShapeInfo.ShapeInfoBuilder baseBuilder = MultiblockShapeInfo.builder()
-                                .aisle("               ", "     2CCC2     ", "               ")
-                                .aisle("     1FFF1     ", "   GF#####FG   ", "     1FFF1     ")
-                                .aisle("   FF     FF   ", "  FHH2CCC2HHF  ", "   FF     FF   ")
-                                .aisle("  F         F  ", " GHFG     GFHG ", "  F         F  ")
-                                .aisle("  F         F  ", " FHG       GHF ", "  F         F  ")
-                                .aisle(" 1           1 ", "2#2         2#2", " 1           1 ")
+                                .aisle("               ", "     SC@CS     ", "               ")
+                                .aisle("     ZFFFZ     ", "   1F#####F2   ", "     MFFFM     ")
+                                .aisle("   FF     FF   ", "  FHHNCCCNHHF  ", "   FF     FF   ")
+                                .aisle("  F         F  ", " 4HF3     3FH4 ", "  F         F  ")
+                                .aisle("  F         F  ", " FH2       1HF ", "  F         F  ")
+                                .aisle(" Z           Z ", "W#E         W#E", " M           M ")
                                 .aisle(" F           F ", "C#C         C#C", " F           F ")
                                 .aisle(" F           F ", "C#C         C#C", " F           F ")
                                 .aisle(" F           F ", "C#C         C#C", " F           F ")
-                                .aisle(" 1           1 ", "2#2         2#2", " 1           1 ")
-                                .aisle("  F         F  ", " FHG       GHF ", "  F         F  ")
-                                .aisle("  F         F  ", " GHFG     GFHG ", "  F         F  ")
-                                .aisle("   FF     FF   ", "  FHH2FYF2HHF  ", "   FF     FF   ")
-                                .aisle("     1FFF1     ", "   GF#####FG   ", "     1FFF1     ")
-                                .aisle("               ", "     2C@C2     ", "               ")
+                                .aisle(" Z           Z ", "W#E         W#E", " M           M ")
+                                .aisle("  F         F  ", " FH2       1HF ", "  F         F  ")
+                                .aisle("  F         F  ", " 3HF4     4FH3 ", "  F         F  ")
+                                .aisle("   FF     FF   ", "  FHHSCCCSHHF  ", "   FF     FF   ")
+                                .aisle("     ZFFFZ     ", "   1F#####F2   ", "     MFFFM     ")
+                                .aisle("               ", "     NCCCN     ", "               ")
                                 .where('@', controller, Direction.NORTH)
-                                .where(' ', FusionReactorMachine.getCasingState(tier))
-                                .where(' ', FUSION_GLASS.get())
-                                .where(' ', FusionReactorMachine.getCoilState(tier))
-                                .where(' ', GTMachines.FLUID_EXPORT_HATCH[tier], Direction.WEST)
-                                .where(' ', GTMachines.FLUID_EXPORT_HATCH[tier], Direction.EAST)
-                                .where(' ', GTMachines.FLUID_EXPORT_HATCH[tier], Direction.SOUTH)
-                                .where(' ', GTMachines.FLUID_EXPORT_HATCH[tier], Direction.NORTH)
-                                .where(' ', GTMachines.ENERGY_INPUT_HATCH[tier], Direction.WEST)
-                                .where(' ', GTMachines.ENERGY_INPUT_HATCH[tier], Direction.EAST)
-                                .where(' ', GTMachines.ENERGY_INPUT_HATCH[tier], Direction.SOUTH)
-                                .where(' ', GTMachines.ENERGY_INPUT_HATCH[tier], Direction.NORTH)
-                                .where(' ', GTMachines.FLUID_IMPORT_HATCH[tier], Direction.UP)
-                                .where(' ', GTMachines.FLUID_IMPORT_HATCH[tier], Direction.DOWN)
+                                .where('F', FusionReactorMachine.getCasingState(tier))
+                                .where('C', FUSION_GLASS.get())
+                                .where('H', FusionReactorMachine.getCoilState(tier))
+                                .where('1', GTMachines.ENERGY_INPUT_HATCH[tier], Direction.WEST)
+                                .where('2', GTMachines.ENERGY_INPUT_HATCH[tier], Direction.EAST)
+                                .where('3', GTMachines.ENERGY_INPUT_HATCH[tier], Direction.SOUTH)
+                                .where('4', GTMachines.ENERGY_INPUT_HATCH[tier], Direction.NORTH)
+                                .where('W', GTMachines.FLUID_EXPORT_HATCH[tier], Direction.WEST)
+                                .where('E', GTMachines.FLUID_EXPORT_HATCH[tier], Direction.EAST)
+                                .where('S', GTMachines.FLUID_EXPORT_HATCH[tier], Direction.SOUTH)
+                                .where('N', GTMachines.FLUID_EXPORT_HATCH[tier], Direction.NORTH)
+                                .where('M', GTMachines.FLUID_IMPORT_HATCH[tier], Direction.UP)
+                                .where('Z', GTMachines.FLUID_IMPORT_HATCH[tier], Direction.DOWN)
                                 .where('#', Blocks.AIR.defaultBlockState());
-
                         shapeInfos.add(baseBuilder.shallowCopy()
                                 .where('G', FusionReactorMachine.getCasingState(tier))
                                 .build());
                         shapeInfos.add(baseBuilder.build());
                         return shapeInfos;
                     })
-                    */
+
                     .modelProperty(GTMachineModelProperties.RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE)
-                    .model(createWorkableCasingMachineModel(FusionReactorMachine.getCasingType(tier).getTexture(),
+                    .model(
+                            createWorkableCasingMachineModel(FusionReactorMachine.getCasingType(tier).getTexture(),
                             GTCEu.id("block/multiblock/fusion_reactor"))
                             .andThen(b -> b
                                     .addDynamicRenderer(DynamicRenderHelper::createFusionRingRender)))

@@ -9,6 +9,7 @@ import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.gregtechceu.gtceu.api.sound.SoundEntry;
 
+import com.vyx.extraadditions.machines.extras.parallel.ExtraParaHatches;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.MinecraftForge;
@@ -59,7 +60,7 @@ public class ExtraAdditionsCore {
      * @return ResourceLocation with the namespace of your mod
      */
     public static ResourceLocation id(String path) {
-        return new ResourceLocation(MOD_ID, path);
+        return new ResourceLocation(ExtraAdditionsCore.MOD_ID, path);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -121,6 +122,7 @@ public class ExtraAdditionsCore {
      */
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
         ExtraAdditionsMultis.init();
+        ExtraParaHatches.init();
     }
 
     /**
