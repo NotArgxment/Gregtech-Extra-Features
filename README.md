@@ -10,5 +10,4 @@ Work in progress!
 
 ## Features:
 - XOR logic for multiblock formation using laser hatches
-- Custom recipe modifier for tiered and independent parallel per controller
--     (Increase of time by 2x but eu/t remains the same as running 1 recipe)
+- Custom recipe modifier for tiered and independent parallel per controller -> time multiplied by 2x but eu/t remains the same as running 1 recipe
