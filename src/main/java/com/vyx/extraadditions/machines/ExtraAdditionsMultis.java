@@ -4,28 +4,39 @@ import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.machine.*;
 import com.gregtechceu.gtceu.api.machine.multiblock.*;
+import com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties;
+import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic;
 import com.gregtechceu.gtceu.api.pattern.*;
+import com.gregtechceu.gtceu.client.renderer.machine.DynamicRenderHelper;
 import com.gregtechceu.gtceu.common.data.*;
+import com.gregtechceu.gtceu.common.machine.multiblock.electric.FusionReactorMachine;
 
 import com.vyx.extraadditions.machines.extras.utils.LaserLogic;
-
 import com.vyx.extraadditions.machines.extras.utils.EARecipeModifiers;
-import net.minecraft.network.chat.Component;
 
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.level.block.Block;
+
+import java.util.Locale;
+
+import static com.gregtechceu.gtceu.api.GTValues.*;
 import static com.gregtechceu.gtceu.api.pattern.Predicates.*;
 import static com.gregtechceu.gtceu.common.data.GCYMBlocks.*;
 import static com.gregtechceu.gtceu.common.data.GCYMRecipeTypes.*;
 import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
+import static com.gregtechceu.gtceu.common.data.GTRecipeModifiers.*;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.*;
+import static com.gregtechceu.gtceu.common.data.models.GTMachineModels.*;
+import static com.gregtechceu.gtceu.utils.FormattingUtil.*;
 
-import static com.vyx.extraadditions.ExtraAdditionsCore.EAREGISTRATE;
+import static com.vyx.extraadditions.ExtraAdditionsCore.EXTRA_ADDITIONS_REGISTRATE;
 import static com.vyx.extraadditions.machines.extras.utils.EAMachineUtils.TieredMultis;
 
 public class ExtraAdditionsMultis {
 
     public static void init() {}
 
-    public static MultiblockMachineDefinition ROBUST_ALLOY_MATERIALIZER = EAREGISTRATE
+    public static MultiblockMachineDefinition ROBUST_ALLOY_MATERIALIZER = EXTRA_ADDITIONS_REGISTRATE
             .multiblock("robust_alloy_materializer", LaserLogic::new)
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(ALLOY_BLAST_RECIPES)
@@ -61,7 +72,7 @@ public class ExtraAdditionsMultis {
                     GTCEu.id("block/multiblock/gcym/blast_alloy_smelter"))
             .register();
 
-    public static MultiblockMachineDefinition ADVANCED_CRACKING_UNIT = EAREGISTRATE
+    public static MultiblockMachineDefinition ADVANCED_CRACKING_UNIT = EXTRA_ADDITIONS_REGISTRATE
             .multiblock("advanced_cracking_unit", CoilWorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(CRACKING_RECIPES)
@@ -93,7 +104,7 @@ public class ExtraAdditionsMultis {
                     GTCEu.id("block/multiblock/cracking_unit"))
             .register();
 
-    public static MultiblockMachineDefinition ENLARGED_REACTION_CHAMBER = EAREGISTRATE
+    public static MultiblockMachineDefinition ENLARGED_REACTION_CHAMBER = EXTRA_ADDITIONS_REGISTRATE
             .multiblock("enlarged_reaction_chamber", WorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(LARGE_CHEMICAL_RECIPES)
@@ -127,7 +138,7 @@ public class ExtraAdditionsMultis {
                     GTCEu.id("block/multiblock/large_chemical_reactor"))
             .register();
 
-    public static MultiblockMachineDefinition LARGE_PYROLYSIS_UNIT = EAREGISTRATE
+    public static MultiblockMachineDefinition LARGE_PYROLYSIS_UNIT = EXTRA_ADDITIONS_REGISTRATE
             .multiblock("large_pyrolysis_unit", CoilWorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(PYROLYSE_RECIPES)
@@ -164,9 +175,6 @@ public class ExtraAdditionsMultis {
                     GTCEu.id("block/casings/voltage/ulv/side") ,
                     GTCEu.id("block/multiblock/pyrolyse_oven"))
             .register();
-/*
-
- to be changed
 
     // registered using the addon namespace from EAMachineUtils
     public static MultiblockMachineDefinition[] ADVANCED_FUSION_REACTOR = TieredMultis("advanced_fusion_reactor",
@@ -182,7 +190,8 @@ public class ExtraAdditionsMultis {
                                     .formatted(VN[tier].toLowerCase(Locale.ROOT))))
                     .recipeType(GTRecipeTypes.FUSION_RECIPES)
                     .recipeModifiers(DEFAULT_ENVIRONMENT_REQUIREMENT,
-                            FusionReactorMachine::recipeModifier)
+                            FusionReactorMachine::recipeModifier,
+                            EARecipeModifiers.TIERED_PARALLEL) // each reactor has its own parallel modifier
                     .appearanceBlock(() -> FusionReactorMachine.getCasingState(tier))
                     .pattern((definition) -> {
 
@@ -221,45 +230,7 @@ public class ExtraAdditionsMultis {
                                 .where('H', blocks(FusionReactorMachine.getCoilState(tier)))
                                 .build();
                     })
-                    .shapeInfos((controller) -> {
-                        List<MultiblockShapeInfo> shapeInfos = new ArrayList<>();
-                        MultiblockShapeInfo.ShapeInfoBuilder baseBuilder = MultiblockShapeInfo.builder()
-                                .aisle("               ", "     SC@CS     ", "               ")
-                                .aisle("     ZFFFZ     ", "   1F#####F2   ", "     MFFFM     ")
-                                .aisle("   FF     FF   ", "  FHHNCCCNHHF  ", "   FF     FF   ")
-                                .aisle("  F         F  ", " 4HF3     3FH4 ", "  F         F  ")
-                                .aisle("  F         F  ", " FH2       1HF ", "  F         F  ")
-                                .aisle(" Z           Z ", "W#E         W#E", " M           M ")
-                                .aisle(" F           F ", "C#C         C#C", " F           F ")
-                                .aisle(" F           F ", "C#C         C#C", " F           F ")
-                                .aisle(" F           F ", "C#C         C#C", " F           F ")
-                                .aisle(" Z           Z ", "W#E         W#E", " M           M ")
-                                .aisle("  F         F  ", " FH2       1HF ", "  F         F  ")
-                                .aisle("  F         F  ", " 3HF4     4FH3 ", "  F         F  ")
-                                .aisle("   FF     FF   ", "  FHHSCCCSHHF  ", "   FF     FF   ")
-                                .aisle("     ZFFFZ     ", "   1F#####F2   ", "     MFFFM     ")
-                                .aisle("               ", "     NCCCN     ", "               ")
-                                .where('@', controller, Direction.NORTH)
-                                .where('F', FusionReactorMachine.getCasingState(tier))
-                                .where('C', FUSION_GLASS.get())
-                                .where('H', FusionReactorMachine.getCoilState(tier))
-                                .where('1', GTMachines.ENERGY_INPUT_HATCH[tier], Direction.WEST)
-                                .where('2', GTMachines.ENERGY_INPUT_HATCH[tier], Direction.EAST)
-                                .where('3', GTMachines.ENERGY_INPUT_HATCH[tier], Direction.SOUTH)
-                                .where('4', GTMachines.ENERGY_INPUT_HATCH[tier], Direction.NORTH)
-                                .where('W', GTMachines.FLUID_EXPORT_HATCH[tier], Direction.WEST)
-                                .where('E', GTMachines.FLUID_EXPORT_HATCH[tier], Direction.EAST)
-                                .where('S', GTMachines.FLUID_EXPORT_HATCH[tier], Direction.SOUTH)
-                                .where('N', GTMachines.FLUID_EXPORT_HATCH[tier], Direction.NORTH)
-                                .where('M', GTMachines.FLUID_IMPORT_HATCH[tier], Direction.UP)
-                                .where('Z', GTMachines.FLUID_IMPORT_HATCH[tier], Direction.DOWN)
-                                .where('#', Blocks.AIR.defaultBlockState());
-                        shapeInfos.add(baseBuilder.shallowCopy()
-                                .where('G', FusionReactorMachine.getCasingState(tier))
-                                .build());
-                        shapeInfos.add(baseBuilder.build());
-                        return shapeInfos;
-                    })
+
 
                     .modelProperty(GTMachineModelProperties.RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE)
                     .model(
@@ -270,11 +241,10 @@ public class ExtraAdditionsMultis {
                     .hasBER(true)
                     .register(),
             LuV, ZPM, UV);
-            */
 
-    public static MultiblockMachineDefinition COMPACT_ASSEMBLY_LINE = EAREGISTRATE
+    public static MultiblockMachineDefinition COMPACT_ASSEMBLY_LINE = EXTRA_ADDITIONS_REGISTRATE
             .multiblock("compact_assembly_line", WorkableElectricMultiblockMachine::new)
-            .langValue("Compact Assembly Line [CAL]")
+            .tooltips(Component.translatable("extraadditions.machine.compact_assembly_line.tooltip.0"))
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(ASSEMBLY_LINE_RECIPES)
             .recipeModifiers(EARecipeModifiers.SIMPLE_PARALLEL.apply(4), GTRecipeModifiers.OC_NON_PERFECT)
@@ -300,8 +270,6 @@ public class ExtraAdditionsMultis {
                             .or(dataHatchPredicate(blocks(CASING_STEEL_SOLID.get()))))
                     .where('N', Predicates.abilities(PartAbility.EXPORT_ITEMS))
                     .build())
-            .tooltips(Component.translatable("block.extraadditions.compact_assembly_line.tooltip.0"),
-                    Component.translatable("block.extraadditions.compact_assembly_line.tooltip.1"))
             .workableCasingModel(
                     GTCEu.id("block/casings/solid/machine_casing_solid_steel") ,
                     GTCEu.id("block/multiblock/assembly_line"))

@@ -28,12 +28,12 @@ public class ExtraAdditionsCore {
 
     public static final String MOD_ID = "extraadditions";
     public static final Logger LOGGER = LogManager.getLogger();
-    public static final GTRegistrate EAREGISTRATE = GTRegistrate.create(ExtraAdditionsCore.MOD_ID);
+    public static final GTRegistrate EXTRA_ADDITIONS_REGISTRATE = GTRegistrate.create(ExtraAdditionsCore.MOD_ID);
 
     public ExtraAdditionsCore() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        EAREGISTRATE.registerRegistrate();
+        EXTRA_ADDITIONS_REGISTRATE.registerRegistrate();
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
