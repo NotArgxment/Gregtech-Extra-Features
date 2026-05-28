@@ -9,7 +9,8 @@
   "block.extraadditions.zpm_advanced_fusion_reactor": "Advanced Fusion Reactor MK II",
   "extraadditions.machine.compact_assembly_line.tooltip.0": "§7This machine is able to perform the work of a regular Assembly Line without §6Ordered Inputs",
   "extraadditions.machine.compact_assembly_line.tooltip.1": "§fOnly allows §bone energy hatch",
-  "extraadditions.machine.robust_alloy_materializer.tooltip.0": "§fCan parallelize with parallel control hatches",
-  "extraadditions.machine.robust_alloy_materializer.tooltip.1": "§7Allows the use of",
-  "extraadditions.machine.robust_alloy_materializer.tooltip.2": " Laser Hatches"
+  "extraadditions.machine.robust_alloy_materializer.tooltip.0": "§7Allows",
+  "extraadditions.machine.robust_alloy_materializer.tooltip.1": " Laser Hatches",
+  "extraadditions.machine.robust_alloy_materializer.tooltip.2": "§7and",
+  "extraadditions.machine.robust_alloy_materializer.tooltip.3": " Parallel Hatches"
 }
