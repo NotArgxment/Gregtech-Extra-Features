@@ -67,8 +67,9 @@ public class EALangHandler {
     private static void initControllerTooltips(RegistrateLangProvider provider) {
         provider.add("extraadditions.machine.compact_assembly_line.tooltip.0", "§7This machine is able to perform the work of a regular Assembly Line without §6Ordered Inputs");
         provider.add("extraadditions.machine.compact_assembly_line.tooltip.1", "§fOnly allows §bone energy hatch");
-        provider.add("extraadditions.machine.robust_alloy_materializer.tooltip.0", "§fCan parallelize with parallel control hatches");
-        provider.add("extraadditions.machine.robust_alloy_materializer.tooltip.1", "§7Allows the use of");
-        provider.add("extraadditions.machine.robust_alloy_materializer.tooltip.2", " Laser Hatches");
+        provider.add("extraadditions.machine.robust_alloy_materializer.tooltip.0", "§7Allows");
+        provider.add("extraadditions.machine.robust_alloy_materializer.tooltip.1", " Laser Hatches ");
+        provider.add("extraadditions.machine.robust_alloy_materializer.tooltip.2", "§7and");
+        provider.add("extraadditions.machine.robust_alloy_materializer.tooltip.3", " Parallel Hatches");
     }
 }
