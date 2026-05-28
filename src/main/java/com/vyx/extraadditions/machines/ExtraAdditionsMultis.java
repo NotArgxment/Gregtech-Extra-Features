@@ -8,6 +8,7 @@ import com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties;
 import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic;
 import com.gregtechceu.gtceu.api.pattern.*;
 import com.gregtechceu.gtceu.client.renderer.machine.DynamicRenderHelper;
+import com.gregtechceu.gtceu.client.util.TooltipHelper;
 import com.gregtechceu.gtceu.common.data.*;
 import com.gregtechceu.gtceu.common.machine.multiblock.electric.FusionReactorMachine;
 
@@ -38,6 +39,16 @@ public class ExtraAdditionsMultis {
 
     public static MultiblockMachineDefinition ROBUST_ALLOY_MATERIALIZER = EXTRA_ADDITIONS_REGISTRATE
             .multiblock("robust_alloy_materializer", LaserLogic::new)
+            .tooltipBuilder((stack, list) -> {
+                list.add(Component.translatable("gtceu.multiblock.parallelizable.tooltip"));
+                list.add(Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.0",
+                        Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.1",
+                        Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.2"))));
+                list.add(
+                        Component.translatable("extraadditions.machine.robust_alloy_materializer.tooltip.1")
+                                .append(Component.translatable("extraadditions.machine.robust_alloy_materializer.tooltip.2"))
+                                        .withStyle(TooltipHelper.RAINBOW_HSL_SLOW));
+            })
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(ALLOY_BLAST_RECIPES)
             .recipeModifiers(GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers::ebfOverclock)
