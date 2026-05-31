@@ -5,7 +5,7 @@ import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 import java.util.function.UnaryOperator;
 
-public class EAFancyTooltips {
+public class EATooltipStyles {
 
     private static final double SPEED = 0.2;
 

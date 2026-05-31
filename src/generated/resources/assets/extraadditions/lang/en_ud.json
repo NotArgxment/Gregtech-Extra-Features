@@ -5,7 +5,7 @@
   "block.extraadditions.large_pyrolysis_unit": "]∩ԀꞀ[ ʇıu∩ sısʎןoɹʎԀ ǝbɹɐꞀ",
   "block.extraadditions.luv_advanced_fusion_reactor": "I ʞW ɹoʇɔɐǝᴚ uoısnℲ pǝɔuɐʌpⱯ",
   "block.extraadditions.robust_alloy_materializer": "]WⱯᴚ[ ɹǝzıןɐıɹǝʇɐW ʎoןןⱯ ʇsnqoᴚ",
-  "block.extraadditions.rock_processing_facility": "ʎʇıןıɔɐℲ buıssǝɔoɹԀ ʞɔoᴚ",
+  "block.extraadditions.rock_processing_facility": "]ℲԀᴚ[ ʎʇıןıɔɐℲ buıssǝɔoɹԀ ʞɔoᴚ",
   "block.extraadditions.uv_advanced_fusion_reactor": "III ʞW ɹoʇɔɐǝᴚ uoısnℲ pǝɔuɐʌpⱯ",
   "block.extraadditions.zpm_advanced_fusion_reactor": "II ʞW ɹoʇɔɐǝᴚ uoısnℲ pǝɔuɐʌpⱯ",
   "extraadditions.fancytooltip.tooltip.0": "sʍoןןⱯㄥ§",
@@ -20,5 +20,6 @@
   "extraadditions.multiblock.uv_advanced_fusion_reactor.tooltip.0": "sunᴚㄥ§",
   "extraadditions.multiblock.uv_advanced_fusion_reactor.tooltip.1": "sןǝןןɐɹɐԀ 9Ɩ ",
   "extraadditions.multiblock.zpm_advanced_fusion_reactor.tooltip.0": "sunᴚㄥ§",
-  "extraadditions.multiblock.zpm_advanced_fusion_reactor.tooltip.1": "sןǝןןɐɹɐԀ 8 "
+  "extraadditions.multiblock.zpm_advanced_fusion_reactor.tooltip.1": "sןǝןןɐɹɐԀ 8 ",
+  "itemGroup.extraadditions.creative_tab": "suoıʇıppⱯ ɐɹʇxƎ :ɥɔǝʇbǝɹ⅁"
 }

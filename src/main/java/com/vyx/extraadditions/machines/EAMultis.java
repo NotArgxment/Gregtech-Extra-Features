@@ -12,8 +12,8 @@ import com.gregtechceu.gtceu.client.util.TooltipHelper;
 import com.gregtechceu.gtceu.common.data.*;
 import com.gregtechceu.gtceu.common.machine.multiblock.electric.FusionReactorMachine;
 
-import com.vyx.extraadditions.machines.client.EAFancyTooltips;
-import com.vyx.extraadditions.machines.client.EARecipeTypes;
+import com.vyx.extraadditions.ExtraAdditionsCore;
+import com.vyx.extraadditions.machines.client.EATooltipStyles;
 import com.vyx.extraadditions.machines.client.utils.LaserLogic;
 import com.vyx.extraadditions.machines.client.utils.EARecipeModifiers;
 
@@ -35,10 +35,15 @@ import static com.gregtechceu.gtceu.utils.FormattingUtil.*;
 import static com.vyx.extraadditions.ExtraAdditionsCore.EXTRA_ADDITIONS_REGISTRATE;
 import static com.vyx.extraadditions.machines.client.EARecipeTypes.*;
 import static com.vyx.extraadditions.machines.client.utils.EAMachineUtils.TieredMultis;
+import static com.vyx.extraadditions.machines.client.utils.EARecipeModifiers.SIMPLE_PARALLEL;
 
 public class EAMultis {
 
     public static void init() {}
+
+    static {
+        EXTRA_ADDITIONS_REGISTRATE.creativeModeTab(() -> ExtraAdditionsCore.EA_TAB);
+    }
 
     public static MultiblockMachineDefinition ROBUST_ALLOY_MATERIALIZER = EXTRA_ADDITIONS_REGISTRATE
             .multiblock("robust_alloy_materializer", LaserLogic::new)
@@ -51,7 +56,7 @@ public class EAMultis {
                             .withStyle(TooltipHelper.RAINBOW_HSL_SLOW))
                         .append(Component.translatable("extraadditions.fancytooltip.tooltip.2"))
                             .append(Component.translatable("extraadditions.fancytooltip.tooltip.3")
-                                    .withStyle(EAFancyTooltips.ZPM_GRADIENT))
+                                    .withStyle(EATooltipStyles.ZPM_GRADIENT))
                 );
             })
             .rotationState(RotationState.NON_Y_AXIS)
@@ -225,7 +230,7 @@ public class EAMultis {
                             Component.translatable("gtceu.machine.fusion_reactor.capacity",
                                     FusionReactorMachine.calculateEnergyStorageFactor(tier, 16) / 1000000L),
                             Component.translatable("gtceu.machine.fusion_reactor.overclocking"),
-                                    Component.translatable("extraadditions.multiblock.%s_advanced_fusion_reactor"
+                                    Component.translatable("extraadditions.multiblock.%s_advanced_fusion_reactor.tooltip.0"
                                             .formatted(VN[tier].toLowerCase(Locale.ROOT)))
                     )
                     .recipeType(GTRecipeTypes.FUSION_RECIPES)
@@ -293,7 +298,7 @@ public class EAMultis {
             })
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(ASSEMBLY_LINE_RECIPES)
-            .recipeModifiers(EARecipeModifiers.SIMPLE_PARALLEL.apply(4), GTRecipeModifiers.OC_NON_PERFECT)
+            .recipeModifiers(SIMPLE_PARALLEL.apply(4), GTRecipeModifiers.OC_NON_PERFECT)
             .appearanceBlock(CASING_STEEL_SOLID)
             .pattern(definition -> FactoryBlockPattern.start()
                     .aisle("ENE", "EKE", "EHE")
@@ -323,9 +328,10 @@ public class EAMultis {
 
     public static MultiblockMachineDefinition ROCK_PROCESSING_FACILITY = EXTRA_ADDITIONS_REGISTRATE
             .multiblock("rock_processing_facility", WorkableElectricMultiblockMachine::new)
+            .tooltips(Component.translatable(""))
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(ROCK_PROCESSING)
-            .recipeModifiers(PARALLEL_HATCH, OC_PERFECT)
+            .recipeModifiers(SIMPLE_PARALLEL.apply(16))
             .appearanceBlock(CASING_SECURE_MACERATION)
             .pattern(definition -> FactoryBlockPattern.start()
                     .aisle("JJJJJJJ", "JGJGJGJ", "JGJGJGJ", "JJJJJJJ", "       ")

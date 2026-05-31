@@ -43,6 +43,7 @@ public class EALangHandler {
         replace(provider, "block.extraadditions.enlarged_reaction_chamber", "Enlarged Reaction Chamber [ERC]");
         replace(provider, "block.extraadditions.large_pyrolysis_unit", "Large Pyrolysis Unit [LPU]");
         replace(provider, "block.extraadditions.compact_assembly_line", "Compact Assembly Line [CAL]");
+        replace(provider, "block.extraadditions.rock_processing_facility", "Rock Processing Facility [RPF]");
         // note: fusion reactor lang entries aren't required here at all, only tooltips
     }
 

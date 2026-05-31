@@ -5,7 +5,7 @@
   "block.extraadditions.large_pyrolysis_unit": "Large Pyrolysis Unit [LPU]",
   "block.extraadditions.luv_advanced_fusion_reactor": "Advanced Fusion Reactor MK I",
   "block.extraadditions.robust_alloy_materializer": "Robust Alloy Materializer [RAM]",
-  "block.extraadditions.rock_processing_facility": "Rock Processing Facility",
+  "block.extraadditions.rock_processing_facility": "Rock Processing Facility [RPF]",
   "block.extraadditions.uv_advanced_fusion_reactor": "Advanced Fusion Reactor MK III",
   "block.extraadditions.zpm_advanced_fusion_reactor": "Advanced Fusion Reactor MK II",
   "extraadditions.fancytooltip.tooltip.0": "§7Allows",
@@ -20,5 +20,6 @@
   "extraadditions.multiblock.uv_advanced_fusion_reactor.tooltip.0": "§7Runs",
   "extraadditions.multiblock.uv_advanced_fusion_reactor.tooltip.1": " 16 Parallels",
   "extraadditions.multiblock.zpm_advanced_fusion_reactor.tooltip.0": "§7Runs",
-  "extraadditions.multiblock.zpm_advanced_fusion_reactor.tooltip.1": " 8 Parallels"
+  "extraadditions.multiblock.zpm_advanced_fusion_reactor.tooltip.1": " 8 Parallels",
+  "itemGroup.extraadditions.creative_tab": "Gregtech: Extra Additions"
 }
