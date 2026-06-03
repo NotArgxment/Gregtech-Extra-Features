@@ -15,6 +15,7 @@ import com.gregtechceu.gtceu.common.machine.multiblock.electric.AssemblyLineMach
 import com.gregtechceu.gtceu.common.machine.multiblock.electric.FusionReactorMachine;
 
 import com.gregtechceu.gtceu.utils.FormattingUtil;
+import com.vyx.extraadditions.ExtraAdditionsCore;
 import com.vyx.extraadditions.machines.client.utils.EATooltipStyles;
 import com.vyx.extraadditions.machines.client.utils.LaserMultiblock;
 import com.vyx.extraadditions.machines.client.utils.EARecipeModifiers;
@@ -45,9 +46,9 @@ public class EAMultis {
 
     public static void init() {}
 
-//    static {
-//        EXTRA_ADDITIONS_REGISTRATE.creativeModeTab(() -> ExtraAdditionsCore.EA_TAB);
-//    }
+    static {
+        EXTRA_ADDITIONS_REGISTRATE.creativeModeTab(() -> ExtraAdditionsCore.EA_TAB);
+    }
 
     public static MultiblockMachineDefinition ROBUST_ALLOY_MATERIALIZER = EXTRA_ADDITIONS_REGISTRATE
             .multiblock("robust_alloy_materializer", LaserMultiblock::new)
