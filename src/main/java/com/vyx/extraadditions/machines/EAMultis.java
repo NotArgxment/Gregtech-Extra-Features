@@ -123,7 +123,8 @@ public class EAMultis {
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(CRACKING_RECIPES)
             .recipeModifiers(
-                    GTRecipeModifiers.PARALLEL_HATCH,
+                    PARALLEL_HATCH,
+                    OC_NON_PERFECT,
                     GTRecipeModifiers::crackerOverclock
             )
             .appearanceBlock(CASING_STAINLESS_CLEAN)
