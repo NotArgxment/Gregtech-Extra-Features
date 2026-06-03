@@ -216,8 +216,8 @@ public class EAMultis {
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(PYROLYSE_RECIPES)
             .recipeModifiers(
-                    GTRecipeModifiers.PARALLEL_HATCH,
-                    GTRecipeModifiers.OC_PERFECT,
+                    PARALLEL_HATCH,
+                    OC_PERFECT,
                     GTRecipeModifiers::pyrolyseOvenOverclock
             )
             .appearanceBlock(MACHINE_CASING_ULV)
@@ -340,7 +340,7 @@ public class EAMultis {
             .recipeType(ASSEMBLY_LINE_RECIPES)
             .recipeModifiers(
                     SIMPLE_PARALLEL.apply(8),
-                    GTRecipeModifiers.OC_NON_PERFECT)
+                    OC_NON_PERFECT)
             .appearanceBlock(CASING_STEEL_SOLID)
             .pattern(definition -> FactoryBlockPattern.start()
                     .aisle("ENE", "EKE", "EHE")
@@ -385,16 +385,15 @@ public class EAMultis {
                     .aisle("JKJKJKJ", "JKJKJKJ", "JKJKJKJ", "JKJKJKJ", "       ")
                     .aisle("JJJJJJJ", "JJJIJJJ", "JJJJJJJ", "JJJJJJJ", "       ")
                     .aisle("       ", "   I   ", "       ", "       ", "       ")
-                    .aisle(" BCCCB ", " CCICC ", " CCCCC ", " CCCCC ", " BCCCB ")
+                    .aisle(" CCCCC ", " CCICC ", " CCCCC ", " CCCCC ", " CCCCC ")
                     .aisle(" CCCCC ", " CEEEC ", " CFFFC ", " C###C ", " CGGGC ")
                     .aisle(" CCCCC ", " CEEEC ", " HFFFH ", " C###C ", " CGGGC ")
                     .aisle(" CCCCC ", " CEEEC ", " CFFFC ", " C###C ", " CGGGC ")
-                    .aisle(" BCCCB ", " CCCCC ", " CC@CC ", " CCCCC ", " BCCCB ")
+                    .aisle(" CCCCC ", " CCCCC ", " CC@CC ", " CCCCC ", " CCCCC ")
                     .where('@', controller(blocks(definition.get())))
                     .where(' ', any())
                     .where('#', air())
                     .where('E', blocks(CASING_TUNGSTENSTEEL_GEARBOX.get()))
-                    .where('B', frames(GTMaterials.BlackSteel))
                     .where('I', blocks(LD_ITEM_PIPE.get()))
                     .where('J', blocks(CASING_NONCONDUCTING.get()))
                     .where('K', blocks(ELECTROLYTIC_CELL.get()))
