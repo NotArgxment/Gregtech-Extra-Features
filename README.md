@@ -6,10 +6,24 @@
 - Advanced Fusion Reactors [AFR]
 - Compact Assembly Line [CAL]
 - Rock Processing Plant [RPF]
+- Industrial Greenhouse [IGh]
+- Tree Growing Chamber [TGC] (IV Version of the IGh)
 
 ## Features:
-- Custom formation logic for laser hatches
-- Custom recipe modifier for tiered and independent parallel per controller -> time multiplied by 2x but eu/t remains the same as running 1 recipe
+- XOR logic for multiblock formation with laser hatches
+  
+| Laser | Energy Hatch | Multiblock Formation |
+|:-----:|:------------:|:--------------------:|
+|   0   |       0      |           0          |
+|   1   |       0      |           1          |
+|   0   |       1      |           1          |
+|   1   |       1      |           0          |
+- Custom parallel recipe modifier, limited to 64
+  - SIMPLE_PARALLEL.apply(value)
+  - TIERED_PARALLEL (Used on the AFRs)
+    - LuV -> 4
+    - ZPM -> 8
+    - UV -> 16 
 - LuV to UV color based gradients
 
 ## Future additions:
@@ -18,5 +32,5 @@
 - Implossion Chamber [IC]
 - Quantum Plasma Forge [QPF]
 - Universal Ore Processing Factory [UOPF] (probably not the best idea, tbd)
-- Chemical skips foe the ERC regarding specific lines required for progression
+- Chemical skips for the ERC regarding specific lines required for progression
 - Configuration integration for easier modpack customization
