@@ -1,4 +1,4 @@
-package com.vyx.extraadditions.machines.client;
+package com.argxment.extraadditions.machines.client;
 
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
@@ -17,6 +17,7 @@ public class EARecipeTypes {
     public static GTRecipeType ROCK_PROCESSING;
     public static GTRecipeType CHEMICAL_REDUCTION;
     public static GTRecipeType AIR_REPROCESSING;
+    public static GTRecipeType DISASSEMBLER;
 
     public static void init() {
 
@@ -36,8 +37,12 @@ public class EARecipeTypes {
                 .setEUIO(IO.IN)
                 .setMaxIOSize(0, 9, 1, 0)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_MIXER, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
-                .setSound(GTSoundEntries.MACERATOR);
+                .setSound(GTSoundEntries.BATH);
 
-
+        DISASSEMBLER = register("disassembler_machine", MULTIBLOCK)
+                .setEUIO(IO.IN)
+                .setMaxIOSize(1, 9, 0, 0)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_MIXER, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+                .setSound(GTSoundEntries.ASSEMBLER);
     }
 }

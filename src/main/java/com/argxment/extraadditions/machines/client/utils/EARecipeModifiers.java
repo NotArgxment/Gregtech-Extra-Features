@@ -1,4 +1,4 @@
-package com.vyx.extraadditions.machines.client.utils;
+package com.argxment.extraadditions.machines.client.utils;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.recipe.content.ContentModifier;

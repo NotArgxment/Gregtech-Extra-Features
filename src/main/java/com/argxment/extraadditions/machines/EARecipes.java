@@ -1,4 +1,4 @@
-package com.vyx.extraadditions.machines;
+package com.argxment.extraadditions.machines;
 
 import com.gregtechceu.gtceu.api.GTValues;
 
@@ -6,7 +6,6 @@ import com.gregtechceu.gtceu.common.data.machines.GCYMMachines;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
 
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
@@ -21,8 +20,7 @@ import static com.gregtechceu.gtceu.common.data.GTItems.*;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.*;
 
-import static com.vyx.extraadditions.machines.EAMultis.*;
-import static com.vyx.extraadditions.machines.client.EARecipeTypes.*;
+import static com.argxment.extraadditions.machines.client.EARecipeTypes.*;
 
 public class EARecipes {
 

@@ -1,4 +1,4 @@
-package com.vyx.extraadditions;
+package com.argxment.extraadditions;
 
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
@@ -6,11 +6,10 @@ import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 
 import com.tterrag.registrate.providers.ProviderType;
 
-import com.vyx.extraadditions.machines.EAMultis;
-import com.vyx.extraadditions.machines.client.EALangHandler;
-import com.vyx.extraadditions.machines.EARecipes;
+import com.argxment.extraadditions.machines.EAMultis;
+import com.argxment.extraadditions.machines.client.EALangHandler;
+import com.argxment.extraadditions.machines.EARecipes;
 
-import com.vyx.extraadditions.machines.client.EARecipeTypes;
 import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;

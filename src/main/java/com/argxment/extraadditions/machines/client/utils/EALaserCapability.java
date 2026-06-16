@@ -1,4 +1,4 @@
-package com.vyx.extraadditions.machines.client.utils;
+package com.argxment.extraadditions.machines.client.utils;
 
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiPart;
@@ -10,9 +10,9 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class LaserMultiblock extends CoilWorkableElectricMultiblockMachine {
+public class EALaserCapability extends CoilWorkableElectricMultiblockMachine {
 
-    public LaserMultiblock(IMachineBlockEntity holder) {
+    public EALaserCapability(IMachineBlockEntity holder) {
         super(holder);
     }
 

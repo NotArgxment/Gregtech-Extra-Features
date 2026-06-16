@@ -1,5 +1,6 @@
-package com.vyx.extraadditions.machines;
+package com.argxment.extraadditions.machines;
 
+import com.argxment.extraadditions.machines.client.EARecipeTypes;
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.RotationState;
@@ -15,10 +16,10 @@ import com.gregtechceu.gtceu.common.machine.multiblock.electric.AssemblyLineMach
 import com.gregtechceu.gtceu.common.machine.multiblock.electric.FusionReactorMachine;
 
 import com.gregtechceu.gtceu.utils.FormattingUtil;
-import com.vyx.extraadditions.ExtraAdditionsCore;
-import com.vyx.extraadditions.machines.client.utils.EATooltipStyles;
-import com.vyx.extraadditions.machines.client.utils.LaserMultiblock;
-import com.vyx.extraadditions.machines.client.utils.EARecipeModifiers;
+import com.argxment.extraadditions.ExtraAdditionsCore;
+import com.argxment.extraadditions.machines.client.utils.EATooltipStyles;
+import com.argxment.extraadditions.machines.client.utils.EALaserCapability;
+import com.argxment.extraadditions.machines.client.utils.EARecipeModifiers;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -38,21 +39,21 @@ import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.*;
 import static com.gregtechceu.gtceu.common.data.models.GTMachineModels.*;
 import static com.gregtechceu.gtceu.utils.FormattingUtil.*;
 
-import static com.vyx.extraadditions.ExtraAdditionsCore.EXTRA_ADDITIONS_REGISTRATE;
-import static com.vyx.extraadditions.machines.client.EARecipeTypes.*;
-import static com.vyx.extraadditions.machines.client.utils.EAMachineUtils.TieredMultis;
-import static com.vyx.extraadditions.machines.client.utils.EARecipeModifiers.SIMPLE_PARALLEL;
+import static com.argxment.extraadditions.ExtraAdditionsCore.EXTRA_ADDITIONS_REGISTRATE;
+import static com.argxment.extraadditions.machines.client.EARecipeTypes.*;
+import static com.argxment.extraadditions.machines.client.utils.EAMachineUtils.TieredMultis;
+import static com.argxment.extraadditions.machines.client.utils.EARecipeModifiers.SIMPLE_PARALLEL;
 
 public class EAMultis {
 
     public static void init() {}
 
     static {
-        EXTRA_ADDITIONS_REGISTRATE.creativeModeTab(() -> ExtraAdditionsCore.EA_TAB);
+        EXTRA_ADDITIONS_REGISTRATE.creativeModeTab(() -> ExtraAdditionsCore.EA_MULTIS);
     }
 
     public static MultiblockMachineDefinition ROBUST_ALLOY_MATERIALIZER = EXTRA_ADDITIONS_REGISTRATE
-            .multiblock("robust_alloy_materializer", LaserMultiblock::new)
+            .multiblock("robust_alloy_materializer", EALaserCapability::new)
             .tooltips(Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.0"),
                     Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.1"),
                     Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.2"))
@@ -495,5 +496,32 @@ public class EAMultis {
             .workableCasingModel(
                     GTCEu.id("block/casings/solid/machine_casing_robust_tungstensteel") ,
                     GTCEu.id("block/multiblock/fusion_reactor"))
+            .register();
+
+    public static MultiblockMachineDefinition DISASSEMBLER = EXTRA_ADDITIONS_REGISTRATE
+            .multiblock("disassembler", WorkableElectricMultiblockMachine::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .recipeType(EARecipeTypes.DISASSEMBLER)
+            .recipeModifiers(PARALLEL_HATCH, OC_NON_PERFECT)
+            .appearanceBlock(CASING_TUNGSTENSTEEL_ROBUST)
+            .pattern(definition -> FactoryBlockPattern.start()
+                    .aisle("OOOOOOO", "OOOOOOO", "OOOOOOO")
+                    .aisle("OOOOOOO", "OKOKKKO", "OOOEEEO")
+                    .aisle("OOOOOOO", "O@OEEEO", "OOOEEEO")
+                    .where('@', controller(blocks(definition.get())))
+                    .where('#', air())
+                    .where('E', blocks(CASING_TEMPERED_GLASS.get()))
+                    .where('K', blocks(CASING_TUNGSTENSTEEL_GEARBOX.get()))
+                    .where('O', blocks(CASING_LARGE_SCALE_ASSEMBLING.get())
+                            .or(Predicates.abilities(PartAbility.IMPORT_ITEMS))
+                            .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS))
+                            .or(Predicates.abilities(PartAbility.EXPORT_ITEMS))
+                            .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2))
+                            .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
+                            .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1)))
+                    .build())
+            .workableCasingModel(
+            GTCEu.id("block/casings/gcym/large_scale_assembling_casing") ,
+                    GTCEu.id("block/multiblock/gcym/large_assembler"))
             .register();
 }

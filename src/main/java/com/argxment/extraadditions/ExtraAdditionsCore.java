@@ -1,9 +1,11 @@
-package com.vyx.extraadditions;
+package com.argxment.extraadditions;
 
+import com.argxment.extraadditions.machines.client.utils.EACircuits;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTCreativeModeTabs;
+import com.gregtechceu.gtceu.common.data.GTItems;
 import com.tterrag.registrate.util.entry.RegistryEntry;
-import com.vyx.extraadditions.machines.EAMultis;
+import com.argxment.extraadditions.machines.EAMultis;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.*;
@@ -13,8 +15,7 @@ import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.gregtechceu.gtceu.api.sound.SoundEntry;
 
 // import com.vyx.extraadditions.machines.client.parallel.ExtraParaHatches;
-import com.vyx.extraadditions.machines.EARecipes;
-import com.vyx.extraadditions.machines.client.EARecipeTypes;
+import com.argxment.extraadditions.machines.client.EARecipeTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Items;
@@ -37,7 +38,7 @@ public class ExtraAdditionsCore {
     public static final GTRegistrate EXTRA_ADDITIONS_REGISTRATE = GTRegistrate.create(ExtraAdditionsCore.MOD_ID);
 
     // Credits to Herr Jolo for making the creative tab!
-    public static RegistryEntry<CreativeModeTab> EA_TAB = EXTRA_ADDITIONS_REGISTRATE
+    public static RegistryEntry<CreativeModeTab> EA_MULTIS = EXTRA_ADDITIONS_REGISTRATE
             .defaultCreativeTab(ExtraAdditionsCore.MOD_ID,
                     builder -> builder
                             .displayItems(
@@ -51,6 +52,7 @@ public class ExtraAdditionsCore {
 
     public ExtraAdditionsCore() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        EACircuits.register(modEventBus);
 
         EXTRA_ADDITIONS_REGISTRATE.registerRegistrate();
 

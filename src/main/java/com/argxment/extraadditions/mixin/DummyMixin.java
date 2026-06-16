@@ -1,4 +1,4 @@
-package com.vyx.extraadditions.mixin;
+package com.argxment.extraadditions.mixin;
 
 import net.minecraft.world.level.levelgen.WorldgenRandom;
 

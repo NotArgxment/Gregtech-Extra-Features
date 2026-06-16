@@ -1,4 +1,4 @@
-package com.vyx.extraadditions.machines.client.utils;
+package com.argxment.extraadditions.machines.client.utils;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
@@ -9,7 +9,7 @@ import com.gregtechceu.gtceu.api.machine.multiblock.MultiblockControllerMachine;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.gregtechceu.gtceu.api.registry.registrate.MachineBuilder;
 import com.gregtechceu.gtceu.api.registry.registrate.MultiblockMachineBuilder;
-import com.vyx.extraadditions.ExtraAdditionsCore;
+import com.argxment.extraadditions.ExtraAdditionsCore;
 
 import java.util.Locale;
 import java.util.function.BiFunction;
