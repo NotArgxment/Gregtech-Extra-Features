@@ -14,7 +14,6 @@ public class EACircuits {
         ExtAddRegistrate.creativeModeTab(() -> ExtraAdditionsCore.EA_TAB);
     }
 
-
     // Huge thanks to witherschat (monifactory contributor) for allowing me to use the universal circuit textures!!!
 
     public static final ItemEntry<Item> ULV_UNIVERSAL_CIRCUIT = ExtAddRegistrate
