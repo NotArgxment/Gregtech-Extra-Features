@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "extraadditions:item/universal/lv_universal_circuit"
+  }
+}

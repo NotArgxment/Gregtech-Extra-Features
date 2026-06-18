@@ -1,9 +1,8 @@
 package com.argxment.extraadditions;
 
-import com.argxment.extraadditions.machines.client.utils.EACircuits;
+import com.argxment.extraadditions.machines.client.EAItems;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTCreativeModeTabs;
-import com.gregtechceu.gtceu.common.data.GTItems;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import com.argxment.extraadditions.machines.EAMultis;
 
@@ -52,7 +51,7 @@ public class ExtraAdditionsCore {
 
     public ExtraAdditionsCore() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        EACircuits.register(modEventBus);
+        EAItems.register(modEventBus);
 
         EXTRA_ADDITIONS_REGISTRATE.registerRegistrate();
 

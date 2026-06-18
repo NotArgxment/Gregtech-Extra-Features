@@ -26,5 +26,17 @@
   "extraadditions.multiblock.uv_advanced_fusion_reactor.tooltip.1": " 16 Parallels",
   "extraadditions.multiblock.zpm_advanced_fusion_reactor.tooltip.0": "§fRuns",
   "extraadditions.multiblock.zpm_advanced_fusion_reactor.tooltip.1": " 8 Parallels",
-  "itemGroup.extraadditions.creative_tab": "GT:EA Items"
+  "item.extraadditions.ev_universal_circuit": "§5EV §rUniversal Circuit",
+  "item.extraadditions.hv_universal_circuit": "§6HV §rUniversal Circuit",
+  "item.extraadditions.iv_universal_circuit": "§9IV §rUniversal Circuit",
+  "item.extraadditions.luv_universal_circuit": "§dLuV §rUniversal Circuit",
+  "item.extraadditions.lv_universal_circuit": "§7LV §rUniversal Circuit",
+  "item.extraadditions.mv_universal_circuit": "§bMV §rUniversal Circuit",
+  "item.extraadditions.uev_universal_circuit": "§2UEV §rUniversal Circuit",
+  "item.extraadditions.uhv_universal_circuit": "§4UHV §rUniversal Circuit",
+  "item.extraadditions.uiv_universal_circuit": "§eUIV §rUniversal Circuit",
+  "item.extraadditions.ulv_universal_circuit": "§8ULV §rUniversal Circuit",
+  "item.extraadditions.uv_universal_circuit": "§3UV §rUniversal Circuit",
+  "item.extraadditions.zpm_universal_circuit": "§cZPM §rUniversal Circuit",
+  "itemGroup.extraadditions.creative_tab": "GT:EA Multiblocks"
 }
