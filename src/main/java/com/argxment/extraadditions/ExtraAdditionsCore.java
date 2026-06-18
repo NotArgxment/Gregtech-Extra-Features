@@ -34,16 +34,16 @@ public class ExtraAdditionsCore {
 
     public static final String MOD_ID = "extraadditions";
     public static final Logger LOGGER = LogManager.getLogger();
-    public static final GTRegistrate ExtAddRegistrate = GTRegistrate.create(ExtraAdditionsCore.MOD_ID);
+    public static final GTRegistrate EARegistry = GTRegistrate.create(ExtraAdditionsCore.MOD_ID);
 
     // Credits to Herr Jolo for making the creative tab!
-    public static RegistryEntry<CreativeModeTab> EA_TAB = ExtAddRegistrate
+    public static RegistryEntry<CreativeModeTab> EA_TAB = EARegistry
             .defaultCreativeTab(ExtraAdditionsCore.MOD_ID,
                     builder -> builder
                             .displayItems(
                                     new GTCreativeModeTabs.RegistrateDisplayItemsGenerator(ExtraAdditionsCore.MOD_ID,
-                                            ExtAddRegistrate))
-                            .title(ExtAddRegistrate.addLang("itemGroup", ExtraAdditionsCore.id("creative_tab"),
+                                            EARegistry))
+                            .title(EARegistry.addLang("itemGroup", ExtraAdditionsCore.id("creative_tab"),
                                     "Gregtech Extra Additions"))
                             .icon(GTBlocks.ANTIMATTER_HAZARD_SIGN_BLOCK::asStack)
                             .build())
@@ -53,7 +53,7 @@ public class ExtraAdditionsCore {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         EACircuits.register(modEventBus);
 
-        ExtAddRegistrate.registerRegistrate();
+        EARegistry.registerRegistrate();
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);

@@ -38,7 +38,7 @@ import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.*;
 import static com.gregtechceu.gtceu.common.data.models.GTMachineModels.*;
 import static com.gregtechceu.gtceu.utils.FormattingUtil.*;
 
-import static com.argxment.extraadditions.ExtraAdditionsCore.ExtAddRegistrate;
+import static com.argxment.extraadditions.ExtraAdditionsCore.EARegistry;
 import static com.argxment.extraadditions.init.EARecipeTypes.*;
 import static com.argxment.extraadditions.init.EAMachineUtils.TieredMultis;
 import static com.argxment.extraadditions.init.client.utils.EARecipeModifiers.SIMPLE_PARALLEL;
@@ -48,10 +48,10 @@ public class EAMultis {
     public static void init() {}
 
     static {
-        ExtAddRegistrate.creativeModeTab(() -> ExtraAdditionsCore.EA_TAB);
+        EARegistry.creativeModeTab(() -> ExtraAdditionsCore.EA_TAB);
     }
 
-    public static MultiblockMachineDefinition ROBUST_ALLOY_MATERIALIZER = ExtAddRegistrate
+    public static MultiblockMachineDefinition ROBUST_ALLOY_MATERIALIZER = EARegistry
             .multiblock("robust_alloy_materializer", EALaserCapability::new)
             .tooltips(Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.0"),
                     Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.1"),
@@ -112,7 +112,7 @@ public class EAMultis {
             })
             .register();
 
-    public static MultiblockMachineDefinition ADVANCED_CRACKING_UNIT = ExtAddRegistrate
+    public static MultiblockMachineDefinition ADVANCED_CRACKING_UNIT = EARegistry
             .multiblock("advanced_cracking_unit", CoilWorkableElectricMultiblockMachine::new)
             .tooltips(Component.translatable("gtceu.machine.cracker.tooltip"),
                     Component.translatable("gtceu.machine.cracker.tooltip.1")
@@ -163,7 +163,7 @@ public class EAMultis {
             })
             .register();
 
-    public static MultiblockMachineDefinition ENLARGED_REACTION_CHAMBER = ExtAddRegistrate
+    public static MultiblockMachineDefinition ENLARGED_REACTION_CHAMBER = EARegistry
             .multiblock("enlarged_reaction_chamber", WorkableElectricMultiblockMachine::new)
             .tooltipBuilder((stack, list) -> {
                 list.add(Component.translatable("extraadditions.fancytooltip.tooltip.0")
@@ -206,7 +206,7 @@ public class EAMultis {
                     GTCEu.id("block/multiblock/large_chemical_reactor"))
             .register();
 
-    public static MultiblockMachineDefinition LARGE_PYROLYSIS_UNIT = ExtAddRegistrate
+    public static MultiblockMachineDefinition LARGE_PYROLYSIS_UNIT = EARegistry
             .multiblock("large_pyrolysis_unit", CoilWorkableElectricMultiblockMachine::new)
             .tooltips(Component.translatable("gtceu.machine.pyrolyse_oven.tooltip"),
                     Component.translatable("gtceu.machine.pyrolyse_oven.tooltip.1"))
@@ -335,7 +335,7 @@ public class EAMultis {
                     .register(),
             LuV, ZPM, UV);
 
-    public static MultiblockMachineDefinition COMPACT_ASSEMBLY_LINE = ExtAddRegistrate
+    public static MultiblockMachineDefinition COMPACT_ASSEMBLY_LINE = EARegistry
             .multiblock("compact_assembly_line", AssemblyLineMachine::new)
             .tooltips(Component.translatable("extraadditions.machine.compact_assembly_line.tooltip.0"),
                     Component.translatable("extraadditions.machine.compact_assembly_line.tooltip.1"))
@@ -371,7 +371,7 @@ public class EAMultis {
                     GTCEu.id("block/multiblock/assembly_line"))
             .register();
 
-    public static MultiblockMachineDefinition ROCK_PROCESSING_FACILITY = ExtAddRegistrate
+    public static MultiblockMachineDefinition ROCK_PROCESSING_FACILITY = EARegistry
             .multiblock("rock_processing_facility", WorkableElectricMultiblockMachine::new)
             .tooltips(
                     Component.translatable("extraadditions.machine.rock_processing_facility.tooltip.0",
@@ -417,7 +417,7 @@ public class EAMultis {
                     GTCEu.id("block/multiblock/gcym/large_maceration_tower"))
             .register();
 
-    public static MultiblockMachineDefinition INDUSTRIAL_GREENHOUSE = ExtAddRegistrate
+    public static MultiblockMachineDefinition INDUSTRIAL_GREENHOUSE = EARegistry
             .multiblock("industrial_greenhouse", WorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(DUMMY_RECIPES)
@@ -457,7 +457,7 @@ public class EAMultis {
                     GTCEu.id("block/multiblock/fusion_reactor"))
             .register();
 
-    public static MultiblockMachineDefinition TREE_GROWING_CHAMBER = ExtAddRegistrate
+    public static MultiblockMachineDefinition TREE_GROWING_CHAMBER = EARegistry
             .multiblock("tree_growing_chamber", WorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(DUMMY_RECIPES)
@@ -499,7 +499,7 @@ public class EAMultis {
                     GTCEu.id("block/multiblock/fusion_reactor"))
             .register();
 
-    public static MultiblockMachineDefinition DISASSEMBLER = ExtAddRegistrate
+    public static MultiblockMachineDefinition DISASSEMBLER = EARegistry
             .multiblock("disassembler", WorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(EARecipeTypes.DISASSEMBLER)

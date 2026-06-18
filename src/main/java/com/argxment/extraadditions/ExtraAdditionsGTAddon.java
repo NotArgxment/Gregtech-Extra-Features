@@ -21,13 +21,13 @@ public class ExtraAdditionsGTAddon implements IGTAddon {
 
     @Override
     public GTRegistrate getRegistrate() {
-        return ExtraAdditionsCore.ExtAddRegistrate;
+        return ExtraAdditionsCore.EARegistry;
     }
 
     @Override
     public void initializeAddon() {
         EAMultis.init();
-        ExtraAdditionsCore.ExtAddRegistrate.addDataGenerator(ProviderType.LANG, EALangHandler::init);
+        ExtraAdditionsCore.EARegistry.addDataGenerator(ProviderType.LANG, EALangHandler::init);
     }
 
     @Override
