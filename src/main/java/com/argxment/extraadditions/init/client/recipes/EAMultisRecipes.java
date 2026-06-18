@@ -1,4 +1,4 @@
-package com.argxment.extraadditions.machines;
+package com.argxment.extraadditions.init.client.recipes;
 
 import com.gregtechceu.gtceu.api.GTValues;
 
@@ -10,16 +10,16 @@ import net.minecraftforge.fluids.FluidStack;
 
 import java.util.function.Consumer;
 
-import static com.argxment.extraadditions.machines.client.EARecipeTypes.ROCK_PROCESSING;
+import static com.argxment.extraadditions.init.EARecipeTypes.ROCK_PROCESSING;
 
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.dust;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 
-public class EARecipes {
+public class EAMultisRecipes {
 
     /*
-    Actual controller recipes are supposed to be made by modpack developers
-    This file will contain only new additional recipes for new multiblocks/custom recipes types
+     * Actual controller recipes are supposed to be made by modpack developers
+     * This file will contain only recipes for the custom recipes types
     */
 
     public static void init(Consumer<FinishedRecipe> provider) {

@@ -1,4 +1,4 @@
-package com.argxment.extraadditions.machines.client.utils;
+package com.argxment.extraadditions.init.client.utils;
 
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiPart;

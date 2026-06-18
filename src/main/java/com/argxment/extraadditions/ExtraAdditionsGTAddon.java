@@ -1,14 +1,15 @@
 package com.argxment.extraadditions;
 
+import com.argxment.extraadditions.init.client.recipes.EACircuitsRecipes;
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 
 import com.tterrag.registrate.providers.ProviderType;
 
-import com.argxment.extraadditions.machines.EAMultis;
-import com.argxment.extraadditions.machines.client.EALangHandler;
-import com.argxment.extraadditions.machines.EARecipes;
+import com.argxment.extraadditions.init.EAMultis;
+import com.argxment.extraadditions.init.client.EALangHandler;
+import com.argxment.extraadditions.init.client.recipes.EAMultisRecipes;
 
 import net.minecraft.data.recipes.FinishedRecipe;
 
@@ -41,7 +42,8 @@ public class ExtraAdditionsGTAddon implements IGTAddon {
 
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
-        EARecipes.init(provider);
+        EAMultisRecipes.init(provider);
+        EACircuitsRecipes.init(provider);
     }
 
     @Override

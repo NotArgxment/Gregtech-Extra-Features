@@ -1,6 +1,5 @@
-package com.argxment.extraadditions.machines;
+package com.argxment.extraadditions.init;
 
-import com.argxment.extraadditions.machines.client.EARecipeTypes;
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.RotationState;
@@ -17,9 +16,9 @@ import com.gregtechceu.gtceu.common.machine.multiblock.electric.FusionReactorMac
 
 import com.gregtechceu.gtceu.utils.FormattingUtil;
 import com.argxment.extraadditions.ExtraAdditionsCore;
-import com.argxment.extraadditions.machines.client.utils.EATooltipStyles;
-import com.argxment.extraadditions.machines.client.utils.EALaserCapability;
-import com.argxment.extraadditions.machines.client.utils.EARecipeModifiers;
+import com.argxment.extraadditions.init.client.utils.EATooltipStyles;
+import com.argxment.extraadditions.init.client.utils.EALaserCapability;
+import com.argxment.extraadditions.init.client.utils.EARecipeModifiers;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -40,9 +39,9 @@ import static com.gregtechceu.gtceu.common.data.models.GTMachineModels.*;
 import static com.gregtechceu.gtceu.utils.FormattingUtil.*;
 
 import static com.argxment.extraadditions.ExtraAdditionsCore.ExtAddRegistrate;
-import static com.argxment.extraadditions.machines.client.EARecipeTypes.*;
-import static com.argxment.extraadditions.machines.client.utils.EAMachineUtils.TieredMultis;
-import static com.argxment.extraadditions.machines.client.utils.EARecipeModifiers.SIMPLE_PARALLEL;
+import static com.argxment.extraadditions.init.EARecipeTypes.*;
+import static com.argxment.extraadditions.init.EAMachineUtils.TieredMultis;
+import static com.argxment.extraadditions.init.client.utils.EARecipeModifiers.SIMPLE_PARALLEL;
 
 public class EAMultis {
 
@@ -505,13 +504,14 @@ public class EAMultis {
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(EARecipeTypes.DISASSEMBLER)
             .recipeModifiers(PARALLEL_HATCH, OC_NON_PERFECT)
-            .appearanceBlock(CASING_TUNGSTENSTEEL_ROBUST)
+            .appearanceBlock(CASING_LARGE_SCALE_ASSEMBLING)
             .pattern(definition -> FactoryBlockPattern.start()
                     .aisle("OOOOOOO", "OOOOOOO", "OOOOOOO")
-                    .aisle("OOOOOOO", "OKOKKKO", "OOOEEEO")
+                    .aisle("OCOOOOO", "OKKKKKO", "OOOEEEO")
                     .aisle("OOOOOOO", "O@OEEEO", "OOOEEEO")
                     .where('@', controller(blocks(definition.get())))
                     .where('#', air())
+                    .where('C', blocks(CASING_GRATE.get()))
                     .where('E', blocks(CASING_TEMPERED_GLASS.get()))
                     .where('K', blocks(CASING_TUNGSTENSTEEL_GEARBOX.get()))
                     .where('O', blocks(CASING_LARGE_SCALE_ASSEMBLING.get())
@@ -523,7 +523,7 @@ public class EAMultis {
                             .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1)))
                     .build())
             .workableCasingModel(
-            GTCEu.id("block/casings/gcym/large_scale_assembling_casing") ,
+                    GTCEu.id("block/casings/gcym/large_scale_assembling_casing"),
                     GTCEu.id("block/multiblock/gcym/large_assembler"))
             .register();
 }

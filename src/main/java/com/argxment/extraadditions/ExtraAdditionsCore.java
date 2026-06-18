@@ -1,10 +1,10 @@
 package com.argxment.extraadditions;
 
-import com.argxment.extraadditions.machines.client.EACircuits;
+import com.argxment.extraadditions.init.EACircuits;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTCreativeModeTabs;
 import com.tterrag.registrate.util.entry.RegistryEntry;
-import com.argxment.extraadditions.machines.EAMultis;
+import com.argxment.extraadditions.init.EAMultis;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.*;
@@ -14,7 +14,7 @@ import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.gregtechceu.gtceu.api.sound.SoundEntry;
 
 // import com.vyx.extraadditions.machines.client.parallel.ExtraParaHatches;
-import com.argxment.extraadditions.machines.client.EARecipeTypes;
+import com.argxment.extraadditions.init.EARecipeTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Items;

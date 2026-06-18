@@ -1,4 +1,4 @@
-package com.argxment.extraadditions.machines.client;
+package com.argxment.extraadditions.init;
 
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;

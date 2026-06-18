@@ -1,4 +1,4 @@
-package com.argxment.extraadditions.machines.client.utils;
+package com.argxment.extraadditions.init;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;

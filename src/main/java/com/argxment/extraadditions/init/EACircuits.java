@@ -1,4 +1,4 @@
-package com.argxment.extraadditions.machines.client;
+package com.argxment.extraadditions.init;
 
 import com.argxment.extraadditions.ExtraAdditionsCore;
 
@@ -53,7 +53,7 @@ public class EACircuits {
             .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/universal/iv_universal_circuit")))
             .register();
 
-    public static final ItemEntry<Item> LUV_UNIVERSAL_CIRCUIT = ExtAddRegistrate
+    public static final ItemEntry<Item> LuV_UNIVERSAL_CIRCUIT = ExtAddRegistrate
             .item("luv_universal_circuit", Item::new)
             .lang("§dLuV §rUniversal Circuit")
             .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/universal/luv_universal_circuit")))

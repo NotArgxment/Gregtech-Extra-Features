@@ -1,4 +1,4 @@
-package com.argxment.extraadditions.machines.client.utils;
+package com.argxment.extraadditions.init.client.utils;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.recipe.content.ContentModifier;
@@ -10,7 +10,7 @@ import java.util.function.IntFunction;
 
 public class EARecipeModifiers {
 
-    private static final int MAX_SIMPLE_PARALLEL = 64;
+    private static final int MAX_SIMPLE_PARALLEL = 256;
 
     public static final IntFunction<RecipeModifier> SIMPLE_PARALLEL = parallels -> {
         if (parallels == 1) return RecipeModifier.NO_MODIFIER;

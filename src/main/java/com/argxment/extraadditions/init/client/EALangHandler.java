@@ -1,4 +1,4 @@
-package com.argxment.extraadditions.machines.client;
+package com.argxment.extraadditions.init.client;
 
 import com.tterrag.registrate.providers.RegistrateLangProvider;
 
