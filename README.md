@@ -1,5 +1,5 @@
 # What does this addon offers?
-### New Multiblocks
+## New Multiblocks
 | Abbreviation |         Machine           | Description                                                                                                                                                             |
 |:------------:|:-------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |      RAM     | Robust Alloy Materializer | Alloy Blast Smelter that allows parallel hatches and laser hatches                                                                                                      |
@@ -13,7 +13,7 @@
 |      TGC     |    Tree Growing Chamber   | IV Version of the IGh, can use parallel hatches                                                                                                                         |
 |      DA      |       Dissasembler        | A multiblock designed to recycle machines, returninig all components used on it, instead of the materials (arc scrapping/macerating)                                    |
 
-### Utilities
+## Utilities
 Special XOR logic for multiblock formation with laser hatches
 
 | Laser | Energy Hatch | Multiblock Formation |
@@ -23,7 +23,7 @@ Special XOR logic for multiblock formation with laser hatches
 |   0   |       1      |           1          |
 |   1   |       1      |           0          |
 
-# Custom parallel recipes modifiers
+### Custom parallel recipes modifiers:
 ### Indepedent Parallels - Used by the Compact Assembly Line and Industrial Greenhouse
 ```java
     private static final int MAX_SIMPLE_PARALLEL = 256;
@@ -57,7 +57,9 @@ Special XOR logic for multiblock formation with laser hatches
 - ULV to UV color based gradients
 
 
-- The addition of Universal Circuits, credits to witherstar (monifactory contributor)
+- The addition of Universal Circuits
+
+### credits to witherstar (monifactory contributor)
 
 ## Future additions:
 - Wireless Optical/Computation Components (Covers format)
