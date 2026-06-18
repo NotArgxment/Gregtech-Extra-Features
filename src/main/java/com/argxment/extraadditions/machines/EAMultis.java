@@ -69,7 +69,7 @@ public class EAMultis {
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(ALLOY_BLAST_RECIPES)
             .recipeModifiers(
-                    SIMPLE_PARALLEL.apply(64), // No EU/t increase, but 2x the time
+                    PARALLEL_HATCH,
                     GTRecipeModifiers::ebfOverclock
             )
             .appearanceBlock(CASING_STRESS_PROOF)
@@ -88,7 +88,9 @@ public class EAMultis {
                             .or(Predicates.abilities(PartAbility.IMPORT_ITEMS, PartAbility.IMPORT_FLUIDS, PartAbility.EXPORT_FLUIDS))
                             .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(2).setPreviewCount(2))
                             .or(Predicates.abilities(PartAbility.INPUT_LASER).setMaxGlobalLimited(1).setPreviewCount(1))
-                            .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1)))
+                            .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
+                            .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))
+                    )
                     .where('B', Predicates.blocks(CASING_HIGH_TEMPERATURE_SMELTING.get()))
                     .where('F', Predicates.blocks(CASING_TUNGSTENSTEEL_PIPE.get()))
                     .where('E', Predicates.blocks(HEAT_VENT.get()))

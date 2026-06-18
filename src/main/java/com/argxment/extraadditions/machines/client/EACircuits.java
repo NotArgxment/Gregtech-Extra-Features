@@ -1,6 +1,7 @@
 package com.argxment.extraadditions.machines.client;
 
 import com.argxment.extraadditions.ExtraAdditionsCore;
+
 import com.tterrag.registrate.util.entry.ItemEntry;
 
 import net.minecraft.world.item.Item;
@@ -87,6 +88,7 @@ public class EACircuits {
             .lang("§eUIV §rUniversal Circuit")
             .model((ctx, prov) -> prov.generated(ctx, prov.modLoc("item/universal/uiv_universal_circuit")))
             .register();
+    // UXV, OpV and MAX will be added soon
 
     public static void register(IEventBus eventBus) {
 
