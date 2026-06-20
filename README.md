@@ -9,7 +9,7 @@
 |      AFR     |  Advanced Fusion Reactors | Fusion Reactors that can perform recipes in parallel using custom parallel logic per tier                                                                               |
 |      CAL     |   Compact Assembly Line   | Assembly line that doesnt need ordered inputs in order to work, and runs 4 parallels by itself                                                                          |
 |      RPP     |   Rock Processing Plant   | Allows the player to turn common types of rocks into the inputs get by its normal processing, in simple words: Macerator > Centrifuge > Electrolyzer all in one machine |
-|      IGh     |   Industrial Greenhouse   | Allows passive income of any type of wood type                                                                                                                          |
+|      IGh     |   Industrial Greenhouse   | Allows passive income of any type of wood                                                                                                                               |
 |      TGC     |    Tree Growing Chamber   | IV Version of the IGh, can use parallel hatches                                                                                                                         |
 |      DA      |       Dissasembler        | A multiblock designed to recycle machines, returninig all components used on it, instead of the materials (arc scrapping/macerating)                                    |
 
