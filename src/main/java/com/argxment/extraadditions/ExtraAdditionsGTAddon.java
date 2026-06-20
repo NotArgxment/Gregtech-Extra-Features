@@ -8,7 +8,7 @@ import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.tterrag.registrate.providers.ProviderType;
 
 import com.argxment.extraadditions.init.Multiblocks;
-import com.argxment.extraadditions.init.client.LangHandler;
+import com.argxment.extraadditions.init.utils.client.LangHandler;
 import com.argxment.extraadditions.init.recipes.MultiblocksRecipes;
 
 import net.minecraft.data.recipes.FinishedRecipe;

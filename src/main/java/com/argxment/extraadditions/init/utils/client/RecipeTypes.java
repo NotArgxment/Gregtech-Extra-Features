@@ -1,4 +1,4 @@
-package com.argxment.extraadditions.init;
+package com.argxment.extraadditions.init.utils.client;
 
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
@@ -10,7 +10,7 @@ import com.lowdragmc.lowdraglib.gui.texture.ProgressTexture;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.register;
 
-public class CustomRecipeTypes {
+public class RecipeTypes {
 
     // credits to Herr Jolo for fixing it - wasn't loading because of wrong registry type
 

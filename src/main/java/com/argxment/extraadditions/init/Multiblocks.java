@@ -1,5 +1,6 @@
 package com.argxment.extraadditions.init;
 
+import com.argxment.extraadditions.init.utils.client.RecipeTypes;
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.RotationState;
@@ -16,9 +17,9 @@ import com.gregtechceu.gtceu.common.machine.multiblock.electric.FusionReactorMac
 
 import com.gregtechceu.gtceu.utils.FormattingUtil;
 import com.argxment.extraadditions.ExtraAdditionsCore;
-import com.argxment.extraadditions.init.client.utils.CustomTooltipStyles;
-import com.argxment.extraadditions.init.client.utils.LaserCapability;
-import com.argxment.extraadditions.init.client.utils.RecipeModifiers;
+import com.argxment.extraadditions.init.utils.CustomTooltipStyles;
+import com.argxment.extraadditions.init.utils.LaserCapability;
+import com.argxment.extraadditions.init.utils.RecipeModifiers;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -39,9 +40,9 @@ import static com.gregtechceu.gtceu.common.data.models.GTMachineModels.*;
 import static com.gregtechceu.gtceu.utils.FormattingUtil.*;
 
 import static com.argxment.extraadditions.ExtraAdditionsCore.EARegistry;
-import static com.argxment.extraadditions.init.CustomRecipeTypes.*;
-import static com.argxment.extraadditions.init.MachineUtils.TieredMultis;
-import static com.argxment.extraadditions.init.client.utils.RecipeModifiers.SIMPLE_PARALLEL;
+import static com.argxment.extraadditions.init.utils.client.RecipeTypes.*;
+import static com.argxment.extraadditions.init.utils.client.MachineUtils.TieredMultis;
+import static com.argxment.extraadditions.init.utils.RecipeModifiers.SIMPLE_PARALLEL;
 
 public class Multiblocks {
 
@@ -502,7 +503,7 @@ public class Multiblocks {
     public static MultiblockMachineDefinition DISASSEMBLER = EARegistry
             .multiblock("disassembler", WorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.NON_Y_AXIS)
-            .recipeType(CustomRecipeTypes.DISASSEMBLER)
+            .recipeType(RecipeTypes.DISASSEMBLER)
             .recipeModifiers(PARALLEL_HATCH, OC_NON_PERFECT)
             .appearanceBlock(CASING_LARGE_SCALE_ASSEMBLING)
             .pattern(definition -> FactoryBlockPattern.start()

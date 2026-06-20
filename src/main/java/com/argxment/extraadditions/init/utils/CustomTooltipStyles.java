@@ -1,4 +1,4 @@
-package com.argxment.extraadditions.init.client.utils;
+package com.argxment.extraadditions.init.utils;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.utils.GradientUtil;

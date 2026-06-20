@@ -7,7 +7,7 @@ import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
 
-import static com.argxment.extraadditions.init.CustomItems.*;
+import static com.argxment.extraadditions.init.Items.*;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.ASSEMBLER_RECIPES;
 
 public class ItemRecipes {

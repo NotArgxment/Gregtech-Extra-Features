@@ -1,7 +1,7 @@
 package com.argxment.extraadditions;
 
 import com.argxment.extraadditions.init.Multiblocks;
-import com.argxment.extraadditions.init.CustomItems;
+import com.argxment.extraadditions.init.Items;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTCreativeModeTabs;
 import com.tterrag.registrate.util.entry.RegistryEntry;
@@ -14,10 +14,9 @@ import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.gregtechceu.gtceu.api.sound.SoundEntry;
 
 // import com.vyx.extraadditions.machines.client.parallel.ExtraParaHatches;
-import com.argxment.extraadditions.init.CustomRecipeTypes;
+import com.argxment.extraadditions.init.utils.client.RecipeTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -51,7 +50,7 @@ public class ExtraAdditionsCore {
 
     public ExtraAdditionsCore() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        CustomItems.register(modEventBus);
+        Items.register(modEventBus);
 
         EARegistry.registerRegistrate();
 
@@ -86,7 +85,7 @@ public class ExtraAdditionsCore {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             LOGGER.info("Hello from common setup! This is *after* registries are done, so we can do this:");
-            LOGGER.info("Look, I found a {}!", Items.DIAMOND);
+            LOGGER.info("Look, I found a {}!", net.minecraft.world.item.Items.DIAMOND);
         });
     }
 
@@ -131,7 +130,7 @@ public class ExtraAdditionsCore {
      * @param event
      */
     private void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event) {
-        CustomRecipeTypes.init();
+        RecipeTypes.init();
     }
 
     /**

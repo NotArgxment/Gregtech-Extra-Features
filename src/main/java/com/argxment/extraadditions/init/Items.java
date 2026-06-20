@@ -9,7 +9,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 
 import static com.argxment.extraadditions.ExtraAdditionsCore.EARegistry;
 
-public class CustomItems {
+public class Items {
 
     static {
         EARegistry.creativeModeTab(() -> ExtraAdditionsCore.EA_TAB);
