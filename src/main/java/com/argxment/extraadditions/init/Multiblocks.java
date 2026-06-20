@@ -16,9 +16,9 @@ import com.gregtechceu.gtceu.common.machine.multiblock.electric.FusionReactorMac
 
 import com.gregtechceu.gtceu.utils.FormattingUtil;
 import com.argxment.extraadditions.ExtraAdditionsCore;
-import com.argxment.extraadditions.init.client.utils.EATooltipStyles;
-import com.argxment.extraadditions.init.client.utils.EALaserCapability;
-import com.argxment.extraadditions.init.client.utils.EARecipeModifiers;
+import com.argxment.extraadditions.init.client.utils.CustomTooltipStyles;
+import com.argxment.extraadditions.init.client.utils.LaserCapability;
+import com.argxment.extraadditions.init.client.utils.RecipeModifiers;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -39,11 +39,11 @@ import static com.gregtechceu.gtceu.common.data.models.GTMachineModels.*;
 import static com.gregtechceu.gtceu.utils.FormattingUtil.*;
 
 import static com.argxment.extraadditions.ExtraAdditionsCore.EARegistry;
-import static com.argxment.extraadditions.init.EARecipeTypes.*;
-import static com.argxment.extraadditions.init.EAMachineUtils.TieredMultis;
-import static com.argxment.extraadditions.init.client.utils.EARecipeModifiers.SIMPLE_PARALLEL;
+import static com.argxment.extraadditions.init.CustomRecipeTypes.*;
+import static com.argxment.extraadditions.init.MachineUtils.TieredMultis;
+import static com.argxment.extraadditions.init.client.utils.RecipeModifiers.SIMPLE_PARALLEL;
 
-public class EAMultis {
+public class Multiblocks {
 
     public static void init() {}
 
@@ -52,14 +52,14 @@ public class EAMultis {
     }
 
     public static MultiblockMachineDefinition ROBUST_ALLOY_MATERIALIZER = EARegistry
-            .multiblock("robust_alloy_materializer", EALaserCapability::new)
+            .multiblock("robust_alloy_materializer", LaserCapability::new)
             .tooltips(Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.0"),
                     Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.1"),
                     Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.2"))
             .tooltipBuilder((stack, list) -> {
                 list.add(Component.translatable("extraadditions.fancytooltip.tooltip.0")
                     .append(Component.translatable("extraadditions.fancytooltip.tooltip.1")
-                            .withStyle(EATooltipStyles.ZPM_GRADIENT))
+                            .withStyle(CustomTooltipStyles.ZPM_GRADIENT))
                         .append(Component.translatable("extraadditions.fancytooltip.tooltip.2"))
                             .append(Component.translatable("extraadditions.fancytooltip.tooltip.3")
                                     .withStyle(TooltipHelper.RAINBOW_HSL_SLOW))
@@ -280,12 +280,12 @@ public class EAMultis {
                                 .append(Component.translatable(
                                                 "extraadditions.multiblock.%s_advanced_fusion_reactor.tooltip.1"
                                                         .formatted(VN[tier].toLowerCase(Locale.ROOT)))
-                                        .withStyle(EATooltipStyles.forTier(tier))));
+                                        .withStyle(CustomTooltipStyles.forTier(tier))));
                     })
                     .recipeType(GTRecipeTypes.FUSION_RECIPES)
                     .recipeModifiers(
                             FusionReactorMachine::recipeModifier,
-                            EARecipeModifiers.TIERED_PARALLEL // each reactor has its own parallel modifier, LuV -> 4, ZPM -> 8, UV -> 16
+                            RecipeModifiers.TIERED_PARALLEL // each reactor has its own parallel modifier, LuV -> 4, ZPM -> 8, UV -> 16
                     )
                     .appearanceBlock(() -> FusionReactorMachine.getCasingState(tier))
                     .pattern((definition) -> {
@@ -502,7 +502,7 @@ public class EAMultis {
     public static MultiblockMachineDefinition DISASSEMBLER = EARegistry
             .multiblock("disassembler", WorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.NON_Y_AXIS)
-            .recipeType(EARecipeTypes.DISASSEMBLER)
+            .recipeType(CustomRecipeTypes.DISASSEMBLER)
             .recipeModifiers(PARALLEL_HATCH, OC_NON_PERFECT)
             .appearanceBlock(CASING_LARGE_SCALE_ASSEMBLING)
             .pattern(definition -> FactoryBlockPattern.start()

@@ -8,7 +8,7 @@ import com.gregtechceu.gtceu.api.recipe.modifier.RecipeModifier;
 
 import java.util.function.IntFunction;
 
-public class EARecipeModifiers {
+public class RecipeModifiers {
 
     private static final int MAX_SIMPLE_PARALLEL = 256;
 

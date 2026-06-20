@@ -7,10 +7,10 @@ import net.minecraft.data.recipes.FinishedRecipe;
 
 import java.util.function.Consumer;
 
-import static com.argxment.extraadditions.init.EACircuits.*;
+import static com.argxment.extraadditions.init.CustomItems.*;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.ASSEMBLER_RECIPES;
 
-public class EACircuitsRecipes {
+public class ItemRecipes {
 
     public static void init(Consumer<FinishedRecipe> provider) {
 

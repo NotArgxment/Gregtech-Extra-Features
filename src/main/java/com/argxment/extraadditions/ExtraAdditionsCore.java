@@ -1,10 +1,10 @@
 package com.argxment.extraadditions;
 
-import com.argxment.extraadditions.init.EACircuits;
+import com.argxment.extraadditions.init.Multiblocks;
+import com.argxment.extraadditions.init.CustomItems;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTCreativeModeTabs;
 import com.tterrag.registrate.util.entry.RegistryEntry;
-import com.argxment.extraadditions.init.EAMultis;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.*;
@@ -14,7 +14,7 @@ import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.gregtechceu.gtceu.api.sound.SoundEntry;
 
 // import com.vyx.extraadditions.machines.client.parallel.ExtraParaHatches;
-import com.argxment.extraadditions.init.EARecipeTypes;
+import com.argxment.extraadditions.init.CustomRecipeTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Items;
@@ -51,7 +51,7 @@ public class ExtraAdditionsCore {
 
     public ExtraAdditionsCore() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        EACircuits.register(modEventBus);
+        CustomItems.register(modEventBus);
 
         EARegistry.registerRegistrate();
 
@@ -131,7 +131,7 @@ public class ExtraAdditionsCore {
      * @param event
      */
     private void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event) {
-        EARecipeTypes.init();
+        CustomRecipeTypes.init();
     }
 
     /**
@@ -141,7 +141,7 @@ public class ExtraAdditionsCore {
      * @param event
      */
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
-        EAMultis.init();
+        Multiblocks.init();
         // ExtraParaHatches.init();
     }
 

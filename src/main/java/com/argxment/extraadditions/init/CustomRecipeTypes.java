@@ -10,7 +10,7 @@ import com.lowdragmc.lowdraglib.gui.texture.ProgressTexture;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.register;
 
-public class EARecipeTypes {
+public class CustomRecipeTypes {
 
     // credits to Herr Jolo for fixing it - wasn't loading because of wrong registry type
 

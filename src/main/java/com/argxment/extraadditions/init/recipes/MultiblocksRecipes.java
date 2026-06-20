@@ -10,12 +10,12 @@ import net.minecraftforge.fluids.FluidStack;
 
 import java.util.function.Consumer;
 
-import static com.argxment.extraadditions.init.EARecipeTypes.ROCK_PROCESSING;
+import static com.argxment.extraadditions.init.CustomRecipeTypes.ROCK_PROCESSING;
 
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.dust;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
 
-public class EAMultisRecipes {
+public class MultiblocksRecipes {
 
     /*
      * Actual controller recipes are supposed to be made by modpack developers

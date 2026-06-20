@@ -14,7 +14,7 @@ import com.argxment.extraadditions.ExtraAdditionsCore;
 import java.util.Locale;
 import java.util.function.BiFunction;
 
-public class EAMachineUtils {
+public class MachineUtils {
 
     public static MultiblockMachineDefinition[] TieredMultis(String name,
                                                                      BiFunction<IMachineBlockEntity, Integer, MultiblockControllerMachine> factory,

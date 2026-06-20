@@ -1,15 +1,15 @@
 package com.argxment.extraadditions;
 
-import com.argxment.extraadditions.init.recipes.EACircuitsRecipes;
+import com.argxment.extraadditions.init.recipes.ItemRecipes;
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 
 import com.tterrag.registrate.providers.ProviderType;
 
-import com.argxment.extraadditions.init.EAMultis;
-import com.argxment.extraadditions.init.client.EALangHandler;
-import com.argxment.extraadditions.init.recipes.EAMultisRecipes;
+import com.argxment.extraadditions.init.Multiblocks;
+import com.argxment.extraadditions.init.client.LangHandler;
+import com.argxment.extraadditions.init.recipes.MultiblocksRecipes;
 
 import net.minecraft.data.recipes.FinishedRecipe;
 
@@ -26,8 +26,8 @@ public class ExtraAdditionsGTAddon implements IGTAddon {
 
     @Override
     public void initializeAddon() {
-        EAMultis.init();
-        ExtraAdditionsCore.EARegistry.addDataGenerator(ProviderType.LANG, EALangHandler::init);
+        Multiblocks.init();
+        ExtraAdditionsCore.EARegistry.addDataGenerator(ProviderType.LANG, LangHandler::init);
     }
 
     @Override
@@ -42,8 +42,8 @@ public class ExtraAdditionsGTAddon implements IGTAddon {
 
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
-        EAMultisRecipes.init(provider);
-        EACircuitsRecipes.init(provider);
+        MultiblocksRecipes.init(provider);
+        ItemRecipes.init(provider);
     }
 
     @Override
