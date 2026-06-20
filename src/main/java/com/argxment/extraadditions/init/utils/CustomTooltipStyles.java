@@ -35,7 +35,15 @@ public class CustomTooltipStyles {
         return TextColor.fromRgb(blended & 0xFFFFFF);
     }
 
-    //
+    /*
+     * Side note:
+     * Some of this gradients may already exist in GTCEu;
+     * See "com\gregtechceu\gtceu\client\util\TooltipHelper" for reference
+     * UV is "BLINKING_CYAN"
+     * ZPM is "BLINKING_RED"
+     * HV is "BLINKING_ORANGE"
+     * LV is "BLINKING_GRAY"
+     */
     public static final UnaryOperator<Style> LV_GRADIENT = style -> style
             .withColor(movingGradient(SPEED_SLOW, LV, WHITE));
 
