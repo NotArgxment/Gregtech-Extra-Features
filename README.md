@@ -56,15 +56,19 @@ Special XOR logic for multiblock formation with laser hatches
 
 ### LV to MAX color based gradients
 
+https://github.com/user-attachments/assets/1a90c975-4bb3-4e95-a29e-6b30509cbd0f
+
 ### Universal Circuits
 <img width="440" height="42" alt="image" src="https://github.com/user-attachments/assets/4e347367-ca26-4c73-9624-fb84a8e2e53f" />
 
 Textures made by Witherstar (Monifactory Contributor)
 
 ## Future additions:
+### Features
 - Wireless Optical/Computation Components (Covers format)
-- Large Air Reprocessor [LARp]
-- Implossion Chamber [IC]
-- Quantum Plasma Forge [QPF]
 - Chemical skips for the ERC regarding specific lines required for progression
-- Configuration integration for easier customization regardless modpacks
+- Configuration integration for easier customization in modpacks
+
+### Multiblocks
+- Oil Refinery Facility: Skip the regular petrochem lines to get direct outputs
+- Large Air Reprocessor: 1-Step air processing (Normal air, Nether air and Ender Air)
