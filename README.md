@@ -56,7 +56,7 @@ Special XOR logic for multiblock formation with laser hatches
 
 ### LV to MAX color based gradients
 
-https://github.com/user-attachments/assets/1a90c975-4bb3-4e95-a29e-6b30509cbd0f
+<img width="482" height="458" alt="Howeachlooks-ezgif com-video-to-gif-converter (1)" src="https://github.com/user-attachments/assets/f8a2ef73-22e1-43cf-aab7-d034d8df3da2" />
 
 ### Universal Circuits
 <img width="440" height="42" alt="image" src="https://github.com/user-attachments/assets/4e347367-ca26-4c73-9624-fb84a8e2e53f" />
