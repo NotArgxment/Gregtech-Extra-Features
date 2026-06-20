@@ -54,12 +54,12 @@ Special XOR logic for multiblock formation with laser hatches
         };
 ```
 
-- ULV to UV color based gradients
+### LV to MAX color based gradients
 
+### Universal Circuits
+<img width="440" height="42" alt="image" src="https://github.com/user-attachments/assets/4e347367-ca26-4c73-9624-fb84a8e2e53f" />
 
-- The addition of Universal Circuits
-
-### credits to witherstar (monifactory contributor)
+Textures made by Witherstar (Monifactory Contributor)
 
 ## Future additions:
 - Wireless Optical/Computation Components (Covers format)
