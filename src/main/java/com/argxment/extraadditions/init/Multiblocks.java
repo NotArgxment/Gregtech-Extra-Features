@@ -274,15 +274,15 @@ public class Multiblocks {
                                     FusionReactorMachine.calculateEnergyStorageFactor(tier, 16) / 1000000L),
                             Component.translatable("gtceu.machine.fusion_reactor.overclocking")
                     )
-                    .tooltipBuilder((stack, list) -> {
-                        list.add(Component.translatable(
-                                        "extraadditions.multiblock.%s_advanced_fusion_reactor.tooltip.0"
-                                                .formatted(VN[tier].toLowerCase(Locale.ROOT)))
-                                .append(Component.translatable(
-                                                "extraadditions.multiblock.%s_advanced_fusion_reactor.tooltip.1"
-                                                        .formatted(VN[tier].toLowerCase(Locale.ROOT)))
-                                        .withStyle(CustomTooltipStyles.forTier(tier))));
-                    })
+
+                    .tooltipBuilder((stack, list) -> list.add(Component.translatable(
+                                    "extraadditions.multiblock.%s_advanced_fusion_reactor.tooltip.0"
+                                            .formatted(VN[tier].toLowerCase(Locale.ROOT)))
+                            .append(Component.translatable(
+                                            "extraadditions.multiblock.%s_advanced_fusion_reactor.tooltip.1"
+                                                    .formatted(VN[tier].toLowerCase(Locale.ROOT)))
+                                    .withStyle(CustomTooltipStyles.forTier(tier)))))
+
                     .recipeType(GTRecipeTypes.FUSION_RECIPES)
                     .recipeModifiers(
                             FusionReactorMachine::recipeModifier,

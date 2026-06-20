@@ -12,21 +12,21 @@ import java.util.function.UnaryOperator;
 public class CustomTooltipStyles {
 
     // Tier main colors
-    private static final int LV = 0xFFAAAAAA; // Gray
-    private static final int MV = 0xFF55FFFF; // Aqua
-    private static final int HV = 0xFFFFAA00; // Gold
-    private static final int EV = 0xFFAA00AA; // Dark Purple
-    private static final int IV = 0xFF5555FF; // Blue
+    private static final int LV  = 0xFFAAAAAA; // Gray
+    private static final int MV  = 0xFF55FFFF; // Aqua
+    private static final int HV  = 0xFFFFAA00; // Gold
+    private static final int EV  = 0xFFAA00AA; // Dark Purple
+    private static final int IV  = 0xFF5555FF; // Blue
     private static final int LuV = 0xFFFF55FF; // Light Purple
     private static final int ZPM = 0xFFFF5555; // Red
-    private static final int UV = 0xFF00AAAA; // Dark Aqua
+    private static final int UV  = 0xFF00AAAA; // Dark Aqua
 
     private static final int WHITE = 0xFFFFFFFF;
 
     // Speed modifiers
-    private static final double SPEED_SLOW = 0.1;
+    private static final double SPEED_SLOW   = 0.1;
     private static final double SPEED_MEDIUM = 0.2;
-    private static final double SPEED_FAST = 0.3;
+    private static final double SPEED_FAST   = 0.3;
 
     // Tries to replicate GTCEu Tooltip Helper
     public static TextColor movingGradient(double speed, int colorA, int colorB) {
@@ -68,7 +68,7 @@ public class CustomTooltipStyles {
     public static final UnaryOperator<Style> UV_GRADIENT = style -> style
             .withColor(movingGradient(SPEED_SLOW, UV, WHITE));
 
-    // Tiered parallel, MUST BE paired with Tiered multiblock (Example: Advanced Fusion Reactors)
+    // Tiered parallel tooltip, MUST be paired with Tiered multiblocks (Example: Advanced Fusion Reactors)
     public static final Map<Integer, UnaryOperator<Style>> TIER_GRADIENTS = Map.of(
             GTValues.LuV, LUV_GRADIENT,
             GTValues.ZPM, ZPM_GRADIENT,

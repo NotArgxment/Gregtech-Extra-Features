@@ -33,11 +33,11 @@ public class GradientPreview {
 
     static int movingGradient(double speed, int colorA, int colorB) {
         float t = (float) (Math.sin(tick[0] * speed) * 0.5 + 0.5);
-        return blend(colorA, colorB, t) | 0xFF000000; // forzamos alpha opaco para dibujar
+        return blend(colorA, colorB, t) | 0xFF000000;
     }
 
     public static void main(String[] args) {
-        // mismo orden/nombres que EATooltipStyles.TIER_GRADIENTS
+
         Map<String, Integer> tiers = new LinkedHashMap<>();
         tiers.put("LV", LV);
         tiers.put("MV", MV);
