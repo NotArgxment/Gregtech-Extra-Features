@@ -13,7 +13,7 @@ import static com.argxment.extendedfeatures.ExtendedFeaturesCore.ExtraFeaturesRe
 public class Items {
 
     static {
-        ExtraFeaturesRegister.creativeModeTab(() -> ExtendedFeaturesCore.EA_TAB);
+        ExtraFeaturesRegister.creativeModeTab(() -> ExtendedFeaturesCore.EF_TAB);
     }
 
     // Huge thanks to witherschat (monifactory contributor) for allowing me to use the universal circuit textures
