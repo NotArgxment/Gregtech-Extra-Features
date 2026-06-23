@@ -26,7 +26,6 @@ public class ExtendedFeaturesGTAddon implements IGTAddon {
 
     @Override
     public void initializeAddon() {
-        Multiblocks.init();
         ExtendedFeaturesCore.ExtraFeaturesRegister.addDataGenerator(ProviderType.LANG, LangHandler::init);
     }
 
