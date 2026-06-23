@@ -60,7 +60,7 @@ public class Multiblocks {
             .tooltipBuilder((stack, list) -> {
                 list.add(Component.translatable("extendedfeatures.fancytooltip.tooltip.0")
                     .append(Component.translatable("extendedfeatures.fancytooltip.tooltip.1")
-                            .withStyle(CustomTooltipStyles.ZPM_GRADIENT))
+                            .withStyle(TooltipHelper.RAINBOW_HSL_SLOW))
                         .append(Component.translatable("extendedfeatures.fancytooltip.tooltip.2"))
                             .append(Component.translatable("extendedfeatures.fancytooltip.tooltip.3")
                                     .withStyle(TooltipHelper.RAINBOW_HSL_SLOW))
