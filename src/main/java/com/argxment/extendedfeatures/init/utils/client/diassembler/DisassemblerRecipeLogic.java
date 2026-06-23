@@ -24,8 +24,8 @@ public enum DisassemblerRecipeLogic implements GTRecipeType.ICustomRecipeLogic {
 
     INSTANCE;
 
-    private static final int BASE_DURATION = 40;
-    private static final int TICKS_PER_TIER = 40;
+    private static final int BASE_DURATION = 50;
+    private static final int TICKS_PER_TIER = 50;
 
     @Override
     public @Nullable GTRecipe createCustomRecipe(IRecipeCapabilityHolder holder) {
