@@ -1,3 +1,5 @@
+## [Join on the official discord server!](https://discord.gg/9NgjMnhxk)
+
 # What does this addon offers?
 # New QoL Multiblocks
 | Abbreviation |         Machine           | Description                                                                                                                                                             |
