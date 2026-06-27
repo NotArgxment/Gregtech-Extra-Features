@@ -10,7 +10,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 import java.util.function.Consumer;
 
-import static com.argxment.extendedfeatures.init.utils.client.RecipeTypes.ROCK_PROCESSING;
+import static com.argxment.extendedfeatures.client.RecipeTypes.ROCK_PROCESSING;
 
 import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.dust;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
