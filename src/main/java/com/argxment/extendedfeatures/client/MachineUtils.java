@@ -1,4 +1,4 @@
-package com.argxment.extendedfeatures.init.utils.client;
+package com.argxment.extendedfeatures.client;
 
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
@@ -17,16 +17,16 @@ import java.util.function.BiFunction;
 public class MachineUtils {
 
     public static MultiblockMachineDefinition[] TieredMultis(String name,
-                                                                     BiFunction<IMachineBlockEntity, Integer, MultiblockControllerMachine> factory,
-                                                                     BiFunction<Integer, MultiblockMachineBuilder<?, ?>, MultiblockMachineDefinition> builder,
-                                                                     int... tiers) {
+                                                             BiFunction<IMachineBlockEntity, Integer, MultiblockControllerMachine> factory,
+                                                             BiFunction<Integer, MultiblockMachineBuilder<?, ?>, MultiblockMachineDefinition> builder,
+                                                             int... tiers) {
         return TieredMultis(ExtendedFeaturesCore.ExtraFeaturesRegister, name, factory, builder, tiers);
     }
 
     public static MultiblockMachineDefinition[] TieredMultis(GTRegistrate registrate, String name,
-                                                                     BiFunction<IMachineBlockEntity, Integer, MultiblockControllerMachine> factory,
-                                                                     BiFunction<Integer, MultiblockMachineBuilder<?, ?>, MultiblockMachineDefinition> builder,
-                                                                     int... tiers) {
+                                                             BiFunction<IMachineBlockEntity, Integer, MultiblockControllerMachine> factory,
+                                                             BiFunction<Integer, MultiblockMachineBuilder<?, ?>, MultiblockMachineDefinition> builder,
+                                                             int... tiers) {
         MultiblockMachineDefinition[] definitions = new MultiblockMachineDefinition[GTValues.TIER_COUNT];
         for (int tier : tiers) {
             var register = registrate
@@ -39,9 +39,9 @@ public class MachineUtils {
     }
 
     public static MachineDefinition[] TieredMachines(String name,
-                                                             BiFunction<IMachineBlockEntity, Integer, MetaMachine> factory,
-                                                             BiFunction<Integer, MachineBuilder<MachineDefinition, ?>, MachineDefinition> builder,
-                                                             int... tiers) {
+                                                     BiFunction<IMachineBlockEntity, Integer, MetaMachine> factory,
+                                                     BiFunction<Integer, MachineBuilder<MachineDefinition, ?>, MachineDefinition> builder,
+                                                     int... tiers) {
         MachineDefinition[] definitions = new MachineDefinition[GTValues.TIER_COUNT];
         for (int tier : tiers) {
             var register = ExtendedFeaturesCore.ExtraFeaturesRegister
