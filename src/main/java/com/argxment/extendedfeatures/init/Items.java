@@ -124,7 +124,5 @@ public class Items {
             .tag(CustomTags.MAX_CIRCUITS)
             .register();
  */
-    public static void register(IEventBus eventBus) {
-
-    }
+    public static void register(IEventBus eventBus) {}
 }
