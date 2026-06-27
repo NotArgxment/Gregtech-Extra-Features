@@ -2,6 +2,7 @@ package com.argxment.extendedfeatures.client.disassembler;
 
 import com.argxment.extendedfeatures.init.Items;
 
+import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.capability.recipe.ItemRecipeCapability;
 import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
@@ -16,6 +17,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -24,25 +26,31 @@ public class RecipeResolver {
 
     // This piece of code will try to match any circuit tag in the recipe to convert them into Universal circuits
     // So avoids giving a bad/good circuit, instead gives all of them in just 1
-    public static final Map<TagKey<Item>, ItemStack> CIRCUIT_TAG_TO_UNIVERSAL = Map.ofEntries(
-            Map.entry(CustomTags.ULV_CIRCUITS, Items.ULV_UNIVERSAL_CIRCUIT.asStack()),
-            Map.entry(CustomTags.LV_CIRCUITS,  Items.LV_UNIVERSAL_CIRCUIT.asStack()),
-            Map.entry(CustomTags.MV_CIRCUITS,  Items.MV_UNIVERSAL_CIRCUIT.asStack()),
-            Map.entry(CustomTags.HV_CIRCUITS,  Items.HV_UNIVERSAL_CIRCUIT.asStack()),
-            Map.entry(CustomTags.EV_CIRCUITS,  Items.EV_UNIVERSAL_CIRCUIT.asStack()),
-            Map.entry(CustomTags.IV_CIRCUITS,  Items.IV_UNIVERSAL_CIRCUIT.asStack()),
-            Map.entry(CustomTags.LuV_CIRCUITS, Items.LuV_UNIVERSAL_CIRCUIT.asStack()),
-            Map.entry(CustomTags.ZPM_CIRCUITS, Items.ZPM_UNIVERSAL_CIRCUIT.asStack()),
-            Map.entry(CustomTags.UV_CIRCUITS,  Items.UV_UNIVERSAL_CIRCUIT.asStack()),
-            Map.entry(CustomTags.UHV_CIRCUITS, Items.UHV_UNIVERSAL_CIRCUIT.asStack())
-            /*
-            Map.entry(CustomTags.UEV_CIRCUITS, Items.UEV_UNIVERSAL_CIRCUIT.asStack()),
-            Map.entry(CustomTags.UIV_CIRCUITS, Items.UIV_UNIVERSAL_CIRCUIT.asStack()),
-            Map.entry(CustomTags.UXV_CIRCUITS, Items.UXV_UNIVERSAL_CIRCUIT.asStack()),
-            Map.entry(CustomTags.OpV_CIRCUITS, Items.OpV_UNIVERSAL_CIRCUIT.asStack()),
-            Map.entry(CustomTags.MAX_CIRCUITS, Items.MAX_UNIVERSAL_CIRCUIT.asStack())
-            */
-    );
+    public static final Map<TagKey<Item>, ItemStack> CIRCUIT_TAG_TO_UNIVERSAL = buildCircuitTagMap();
+
+    private static Map<TagKey<Item>, ItemStack> buildCircuitTagMap() {
+        Map<TagKey<Item>, ItemStack> map = new HashMap<>();
+        map.put(CustomTags.ULV_CIRCUITS, Items.ULV_UNIVERSAL_CIRCUIT.asStack());
+        map.put(CustomTags.LV_CIRCUITS,  Items.LV_UNIVERSAL_CIRCUIT.asStack());
+        map.put(CustomTags.MV_CIRCUITS,  Items.MV_UNIVERSAL_CIRCUIT.asStack());
+        map.put(CustomTags.HV_CIRCUITS,  Items.HV_UNIVERSAL_CIRCUIT.asStack());
+        map.put(CustomTags.EV_CIRCUITS,  Items.EV_UNIVERSAL_CIRCUIT.asStack());
+        map.put(CustomTags.IV_CIRCUITS,  Items.IV_UNIVERSAL_CIRCUIT.asStack());
+        map.put(CustomTags.LuV_CIRCUITS, Items.LuV_UNIVERSAL_CIRCUIT.asStack());
+        map.put(CustomTags.ZPM_CIRCUITS, Items.ZPM_UNIVERSAL_CIRCUIT.asStack());
+        map.put(CustomTags.UV_CIRCUITS,  Items.UV_UNIVERSAL_CIRCUIT.asStack());
+
+        if (GTCEuAPI.isHighTier()) {
+            map.put(CustomTags.UHV_CIRCUITS, Items.UHV_UNIVERSAL_CIRCUIT.asStack());
+            map.put(CustomTags.UEV_CIRCUITS, Items.UEV_UNIVERSAL_CIRCUIT.asStack());
+            map.put(CustomTags.UIV_CIRCUITS, Items.UIV_UNIVERSAL_CIRCUIT.asStack());
+            map.put(CustomTags.UXV_CIRCUITS, Items.UXV_UNIVERSAL_CIRCUIT.asStack());
+            map.put(CustomTags.OpV_CIRCUITS, Items.OpV_UNIVERSAL_CIRCUIT.asStack());
+            map.put(CustomTags.MAX_CIRCUITS, Items.MAX_UNIVERSAL_CIRCUIT.asStack());
+        }
+
+        return Map.copyOf(map);
+    }
 
     public static Optional<List<ItemStack>> resolveFromGTRecipeType(ServerLevel level, GTRecipeType recipeType, ItemStack targetStack) {
         for (GTRecipe recipe : level.getRecipeManager().getAllRecipesFor(recipeType)) {
