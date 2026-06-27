@@ -1,4 +1,4 @@
-package com.argxment.extendedfeatures.init.utils.client.diassembler;
+package com.argxment.extendedfeatures.client.disassembler;
 
 import com.argxment.extendedfeatures.init.Items;
 

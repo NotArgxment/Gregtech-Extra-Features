@@ -1,6 +1,6 @@
-package com.argxment.extendedfeatures.init.utils.client.diassembler;
+package com.argxment.extendedfeatures.client.disassembler;
 
-import com.argxment.extendedfeatures.init.utils.client.RecipeTypes;
+import com.argxment.extendedfeatures.client.RecipeTypes;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.capability.recipe.IRecipeCapabilityHolder;
