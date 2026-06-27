@@ -1,4 +1,4 @@
-package com.argxment.extendedfeatures.init.utils.client;
+package com.argxment.extendedfeatures.client;
 
 import com.tterrag.registrate.providers.RegistrateLangProvider;
 
@@ -54,6 +54,5 @@ public class LangHandler {
         provider.add("extendedfeatures.fancytooltip.tooltip.1", " Laser Hatches ");
         provider.add("extendedfeatures.fancytooltip.tooltip.2", "§fand");
         provider.add("extendedfeatures.fancytooltip.tooltip.3", " Parallel Hatches");
-
     }
 }
